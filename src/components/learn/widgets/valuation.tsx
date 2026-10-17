@@ -192,7 +192,7 @@ export function WaccEv({ compact = false }: { compact?: boolean }) {
                 <YAxis type="category" dataKey="label" {...axisProps} width={128} tick={{ ...axisProps.tick, fontSize: 11 }} />
                 <ReferenceLine x={0} stroke={C.axis} />
                 <Tooltip
-                  cursor={{ fill: "rgba(33,101,197,0.06)" }}
+                  cursor={{ fill: "rgba(29,112,176,0.06)" }}
                   content={({ active, payload }) => {
                     if (!active || !payload?.length) return null;
                     const d = payload[0].payload as (typeof tornado)[number];
@@ -374,7 +374,7 @@ export function SensitivityGrid() {
   const tint = (v: number) => {
     const dev = v / base - 1;
     const a = Math.min(0.42, (Math.abs(dev) / maxDev) * 0.42);
-    return dev >= 0 ? `rgba(33,101,197,${a})` : `rgba(235,104,52,${a})`;
+    return dev >= 0 ? `rgba(29,112,176,${a})` : `rgba(235,104,52,${a})`;
   };
 
   return (
@@ -435,7 +435,7 @@ export function SensitivityGrid() {
       </div>
       <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-ink-muted">
         <span className="flex items-center gap-1.5">
-          <span className="h-3 w-3 rounded-sm" style={{ background: "rgba(33,101,197,0.35)" }} /> Above base case
+          <span className="h-3 w-3 rounded-sm" style={{ background: "rgba(29,112,176,0.35)" }} /> Above base case
         </span>
         <span className="flex items-center gap-1.5">
           <span className="h-3 w-3 rounded-sm" style={{ background: "rgba(235,104,52,0.35)" }} /> Below base case

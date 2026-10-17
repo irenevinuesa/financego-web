@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, FileText, ListChecks, Mail, Map, MessagesSquare } from "lucide-react";
 import { CAREER_GUIDES } from "@/content/careers/guides";
-import { Scene } from "@/components/art/Scene";
+import { Cover, coverInk } from "@/components/art/Cover";
+import { TRACKS } from "@/content/taxonomy";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Badge, Card, SectionHeading } from "@/components/ui/primitives";
 
@@ -36,7 +37,9 @@ export default function CareerPage() {
           {CAREER_GUIDES.map((g) => (
             <Link key={g.slug} href={`/career/${g.slug}/`} className="group overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift">
               <div className="h-28 overflow-hidden">
-                <Scene name={g.scene} className="h-full w-full transition-transform duration-500 group-hover:scale-105" />
+                <Cover name={g.scene} className="h-full w-full transition-transform duration-500 group-hover:scale-105">
+                  <span className={`absolute bottom-3 left-4 font-serif text-3xl leading-none ${coverInk(g.scene) === "light" ? "text-cream" : "text-navy"}`}>{TRACKS[g.track].short}</span>
+                </Cover>
               </div>
               <div className="p-4">
                 <p className="font-semibold text-navy group-hover:text-electric">{g.title}</p>

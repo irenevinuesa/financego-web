@@ -3,18 +3,18 @@
 /* ───────────────────────── FinanceGo design tokens — Alpine Blue ───────────────────────── */
 @theme {
   /* Brand palette */
-  --color-navy: #123a80;
-  --color-navy-deep: #0d2b61;
-  --color-electric: #2165c5;
-  --color-electric-dark: #1a52a3;
+  --color-navy: #114779;
+  --color-navy-deep: #0d3861;
+  --color-electric: #1d70b0;
+  --color-electric-dark: #1a67a3;
   --color-cream: #f7f4ee;
   --color-cream-deep: #efeae0;
-  --color-ice: #a9c8e8;
-  --color-ice-soft: #e4eef8;
-  --color-ink: #263449;
-  --color-ink-muted: #5a6578;
-  --color-line: #e2e6ec;
-  --color-line-strong: #cdd3dc;
+  --color-ice: #a9d2e8;
+  --color-ice-soft: #e4f1f8;
+  --color-ink: #263949;
+  --color-ink-muted: #5a6a78;
+  --color-line: #e2e8ec;
+  --color-line-strong: #cdd5dc;
   --color-success: #228565;
   --color-success-ink: #1b6b51;
   --color-success-soft: #e3f2ec;
@@ -25,11 +25,11 @@
   --color-warning-ink: #8a5a00;
 
   /* Chart slots (validated for CVD separation on white) */
-  --color-chart-1: #2165c5;
+  --color-chart-1: #1d70b0;
   --color-chart-2: #eb6834;
   --color-chart-3: #1baf7a;
-  --color-chart-grid: #e8ebf0;
-  --color-chart-axis: #cdd3dc;
+  --color-chart-grid: #e8ecf0;
+  --color-chart-axis: #cdd5dc;
 
   /* Typography */
   --font-serif: var(--font-dm-serif), Georgia, "Times New Roman", serif;
@@ -37,9 +37,8 @@
   --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", Menlo, monospace;
   --font-hand: var(--font-caveat), "Bradley Hand", cursive;
 
-  --shadow-card: 0 1px 2px rgb(18 58 128 / 0.04), 0 4px 16px rgb(18 58 128 / 0.05);
-  --shadow-lift: 0 2px 4px rgb(18 58 128 / 0.06), 0 12px 32px rgb(18 58 128 / 0.1);
-  --shadow-polaroid: 0 2px 4px rgb(38 52 73 / 0.12), 0 14px 30px rgb(38 52 73 / 0.18);
+  --shadow-card: 0 1px 2px rgb(17 71 121 / 0.04), 0 4px 16px rgb(17 71 121 / 0.05);
+  --shadow-lift: 0 2px 4px rgb(17 71 121 / 0.06), 0 12px 32px rgb(17 71 121 / 0.1);
 
   --animate-fade-up: fade-up 0.5s ease-out both;
   --animate-pop: pop 0.25s ease-out both;
@@ -173,7 +172,7 @@
     border-radius: 999px;
     background: #fff;
     border: 2px solid var(--color-electric);
-    box-shadow: 0 1px 3px rgb(18 58 128 / 0.25);
+    box-shadow: 0 1px 3px rgb(17 71 121 / 0.25);
   }
   .range::-moz-range-thumb {
     width: 16px;

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ChevronRight } from "lucide-react";
 import type { SceneName } from "@/content/types";
-import { Scene } from "@/components/art/Scene";
+import { Cover, coverInk } from "@/components/art/Cover";
 import { cn } from "@/lib/cn";
 
 export interface Crumb {
@@ -62,7 +62,9 @@ export function PageHeader({
         </div>
         {scene && (
           <div className="relative hidden h-56 overflow-hidden rounded-3xl shadow-lift lg:block">
-            <Scene name={scene} className="h-full w-full" />
+            <Cover name={scene} className="h-full w-full">
+              <span className={cn("absolute bottom-3 right-6 select-none font-serif text-8xl leading-none", coverInk(scene) === "light" ? "text-cream/25" : "text-navy/15")}>FG</span>
+            </Cover>
           </div>
         )}
       </div>

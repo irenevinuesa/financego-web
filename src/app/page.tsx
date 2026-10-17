@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Calculator, MessagesSquare, Target } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, CircleCheck, MessagesSquare, Target } from "lucide-react";
 import { ALL_COURSES, FEATURED_COURSE_IDS } from "@/content/courses";
-import { Scene } from "@/components/art/Scene";
-import { HandArrow, Polaroid } from "@/components/art/Polaroid";
+import { Cover, HandArrow } from "@/components/art/Cover";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/primitives";
 import { CourseCard } from "@/components/learn/CourseCard";
@@ -56,14 +55,53 @@ export default function HomePage() {
             </dl>
           </div>
 
-          <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
-            <div className="relative aspect-[4/3.3] overflow-hidden rounded-[2rem] shadow-lift">
-              <Scene name="lake" className="h-full w-full" title="Illustration of an alpine lake at sunrise" priority />
-            </div>
-            <Polaroid scene="nyc" caption="New York" rotate={-6} className="absolute -bottom-10 -left-4 w-32 sm:-left-10 sm:w-40" />
-            <Polaroid scene="london" caption="London" rotate={5} className="absolute -right-3 -top-8 hidden w-32 sm:block sm:w-36" />
-            <div className="absolute -bottom-16 right-2 flex items-end gap-1 text-navy sm:-bottom-14 sm:right-8">
-              <HandArrow className="mb-6 h-10 w-16 -scale-x-100 rotate-[200deg] text-electric" />
+          {/* Product preview: a contour panel in the logo's blue with three real parts of FinanceGo. */}
+          <div className="relative mx-auto w-full max-w-xl pb-14 lg:max-w-none">
+            <Cover name="alps" className="aspect-[4/4.7] rounded-[2rem] shadow-lift sm:aspect-[4/3.3]" title="FinanceGo product preview">
+              <span className="absolute -bottom-4 right-5 select-none font-serif text-[7rem] leading-none text-cream/10 sm:text-[9rem]">FG</span>
+
+              <div className="absolute left-4 right-14 top-5 rounded-2xl bg-white p-4 shadow-lift sm:left-8 sm:right-auto sm:top-8 sm:w-[64%]">
+                <p className="flex items-center gap-1.5 text-[0.7rem] font-semibold uppercase tracking-wider text-electric">
+                  <MessagesSquare className="h-3.5 w-3.5" /> Interview Simulator
+                </p>
+                <p className="mt-1.5 text-sm font-medium leading-snug text-navy">What happens to a DCF valuation if the WACC increases?</p>
+                <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-success-soft px-2.5 py-1 text-xs font-medium text-success-ink">
+                  <CircleCheck className="h-3.5 w-3.5" /> It falls. Now, why does terminal value fall the most?
+                </p>
+              </div>
+
+              <div className="absolute right-4 top-[37%] hidden w-[40%] rounded-2xl bg-white p-4 shadow-lift sm:right-6 sm:block">
+                <p className="flex items-center gap-1.5 text-[0.7rem] font-semibold uppercase tracking-wider text-electric">
+                  <Calculator className="h-3.5 w-3.5" /> WACC Calculator
+                </p>
+                <p className="mt-1 text-3xl font-semibold tracking-tight text-navy">8.77%</p>
+                <dl className="mt-1.5 space-y-0.5 text-xs text-ink-muted">
+                  <div className="flex justify-between gap-2">
+                    <dt>Cost of equity</dt>
+                    <dd className="figure text-ink">10.60%</dd>
+                  </div>
+                  <div className="flex justify-between gap-2">
+                    <dt>After-tax debt</dt>
+                    <dd className="figure text-ink">4.50%</dd>
+                  </div>
+                </dl>
+              </div>
+
+              <div className="absolute bottom-5 left-4 right-14 rounded-2xl bg-white p-4 shadow-lift sm:bottom-8 sm:left-8 sm:right-auto sm:w-[50%]">
+                <p className="flex items-center gap-1.5 text-[0.7rem] font-semibold uppercase tracking-wider text-electric">
+                  <BookOpen className="h-3.5 w-3.5" /> Course
+                </p>
+                <p className="mt-1 text-sm font-semibold text-navy">Valuation Essentials: DCF</p>
+                <p className="mt-0.5 text-xs text-ink-muted">6 lessons · interactive models · final assessment</p>
+                <div className="mt-2.5 flex gap-1" aria-hidden>
+                  {[0, 1, 2, 3, 4, 5].map((i) => (
+                    <span key={i} className="h-1.5 flex-1 rounded-full bg-ice-soft" />
+                  ))}
+                </div>
+              </div>
+            </Cover>
+            <div className="absolute bottom-0 right-2 flex items-end gap-1 text-navy sm:right-8">
+              <HandArrow className="mb-5 h-9 w-14 -scale-x-100 rotate-[200deg] text-electric" />
               <p className="font-hand text-2xl leading-none sm:text-[1.7rem]">Small steps. Big opportunities.</p>
             </div>
           </div>

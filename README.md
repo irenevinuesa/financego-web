@@ -22,7 +22,7 @@ export PATH="$HOME/.local/node/bin:$PATH"
 | `npm run typecheck` | TypeScript check |
 | `npm run build` | Production build, exported as static files to `out/` |
 | `npm run preview` | Serve `out/` at http://localhost:4173 (uses Python's built-in server) |
-| `npm run scenes` | Regenerate the landscape artwork in `public/scenes/` |
+| `npm run patterns` | Regenerate the contour-line patterns in `public/patterns/` |
 
 To deploy, upload the `out/` folder to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages…).
 
@@ -34,7 +34,7 @@ Next.js 16 (App Router, static export) · React 19 · TypeScript (strict) · Tai
 
 | Area | Built |
 | --- | --- |
-| **Design system** | Alpine Blue palette, DM Serif Display, Inter, JetBrains Mono and Caveat (handwritten notes); original vector landscapes and Polaroids; chart palette checked for colour-blind safety |
+| **Design system** | Palette built on the FG logo blue (#114779), DM Serif Display, Inter, JetBrains Mono and Caveat (handwritten notes); no photography: covers in the logo blues with original topographic contour-line patterns, the FG monogram and category icons; chart palette checked for colour-blind safety |
 | **Home** | Hero, choose-your-path cards, featured courses, question of the day, live WACC→EV tool, interview challenge, progress preview, footer with legal pages |
 | **Learn** | Catalogue of 50 courses in 8 categories with filters. **6 complete courses** (Finance 101, Accounting Fundamentals, Valuation Essentials: DCF, Trading Comparables, M&A Fundamentals, Fixed Income) with 30 lessons, KaTeX formulas, worked examples, **16 interactive widgets**, interview-mistake callouts, knowledge checks and final assessments. The other 44 courses are clearly marked *In development* with a planned outline |
 | **Practice** | 82-question bank across 13 topics: multiple choice, numerical (with tolerance), open-ended (model answer and self-assessment), scenario, multi-step cases and interview traps. Filters by topic, difficulty, type, time, track and status. Six modes: Quick, Standard, Timed, Topic Mastery, Interview Prep and Review Incorrect |
@@ -50,7 +50,7 @@ Next.js 16 (App Router, static export) · React 19 · TypeScript (strict) · Tai
 - **Interview feedback is rule-based** (concept patterns, numeric tolerance, length and structure heuristics). It does not understand language, and the report says so.
 - **Open-ended practice answers are self-assessed** against key points, not graded.
 - **Contact channel:** set `contactEmail` in `src/content/site.ts` to show a contact address on the Help page.
-- **Artwork:** landscapes are original vector illustrations. To use licensed photography, replace the files in `public/scenes/` (same names); layouts do not change.
+- **Graphics:** covers are CSS gradients plus contour-line SVG masks (`src/components/art/Cover.tsx`, patterns from `npm run patterns`). The logo source is in `assets/brand/`.
 
 ## Project structure
 
@@ -71,7 +71,7 @@ src/
     interview.ts       Rule-based interview engine
     practice.ts        Practice modes and filters
     search.ts          Local search index
-scripts/build-scenes.mjs  Renders the landscape SVGs
+scripts/build-patterns.mjs  Generates the contour-line pattern SVGs
 ```
 
 ### Adding content

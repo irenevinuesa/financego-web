@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BookOpen, Clock } from "lucide-react";
 import type { CourseMeta } from "@/content/types";
 import { CATEGORIES } from "@/content/taxonomy";
-import { Scene } from "@/components/art/Scene";
+import { CATEGORY_ICONS, Cover, coverInk } from "@/components/art/Cover";
 import { Badge, DifficultyBadge } from "@/components/ui/primitives";
 import { CourseProgressPill } from "./CourseProgressPill";
 import { cn } from "@/lib/cn";
@@ -16,13 +16,21 @@ function fmtMinutes(m: number) {
 
 export function CourseCard({ course, className }: { course: CourseMeta; className?: string }) {
   const planned = course.status === "planned";
+  const Icon = CATEGORY_ICONS[course.category];
+  const light = coverInk(course.scene) === "light";
   return (
     <Link
       href={`/learn/${course.id}/`}
       className={cn("group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lift", className)}
     >
       <div className="relative h-36 overflow-hidden">
-        <Scene name={course.scene} className={cn("h-full w-full transition-transform duration-500 group-hover:scale-105", planned && "opacity-75 saturate-50")} />
+        <Cover name={course.scene} className={cn("h-full w-full transition-transform duration-500 group-hover:scale-105", planned && "opacity-70 saturate-[0.35]")}>
+          <div className="flex h-full items-end p-4">
+            <span className={cn("flex h-11 w-11 items-center justify-center rounded-xl", light ? "bg-white/10 text-cream ring-1 ring-white/25" : "bg-white/75 text-navy ring-1 ring-navy/10")}>
+              <Icon className="h-5 w-5" />
+            </span>
+          </div>
+        </Cover>
         <div className="absolute left-3 top-3 flex gap-2">
           {planned ? <Badge tone="warning">In development</Badge> : <Badge tone="navy">Available</Badge>}
         </div>

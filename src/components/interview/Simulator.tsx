@@ -164,7 +164,7 @@ function Setup({ onStart }: { onStart: (c: InterviewConfig) => void }) {
           </div>
         </div>
         <label className="flex items-center gap-3 text-sm text-ink md:col-span-2">
-          <input type="checkbox" checked={timer} onChange={(e) => setTimer(e.target.checked)} className="h-4 w-4 accent-[#2165c5]" />
+          <input type="checkbox" checked={timer} onChange={(e) => setTimer(e.target.checked)} className="h-4 w-4 accent-[#1d70b0]" />
           Show a timer (about two minutes per answer is a good target)
         </label>
       </div>

@@ -17,7 +17,13 @@ export const metadata: Metadata = {
   },
   description:
     "Interactive finance education and career preparation: structured courses, a technical question bank, a scripted interview simulator, working financial tools and a personal tracker.",
-  icons: { icon: "/icon.svg" },
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
+  },
 };
 
 export const viewport: Viewport = {

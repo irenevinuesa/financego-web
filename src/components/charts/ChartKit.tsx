@@ -6,13 +6,13 @@ import { cn } from "@/lib/cn";
 
 /* Shared chart styling (validated palette: blue / orange / aqua on white). */
 export const C = {
-  s1: "#2165c5",
+  s1: "#1d70b0",
   s2: "#eb6834",
   s3: "#1baf7a",
-  navy: "#123a80",
-  grid: "#e8ebf0",
-  axis: "#cdd3dc",
-  tick: "#5a6578",
+  navy: "#114779",
+  grid: "#e8ecf0",
+  axis: "#cdd5dc",
+  tick: "#5a6a78",
   surface: "#ffffff",
 };
 

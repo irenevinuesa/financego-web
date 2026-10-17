@@ -262,7 +262,7 @@ export function TrackerOverview() {
                       <CartesianGrid {...gridProps} />
                       <XAxis dataKey="label" {...axisProps} />
                       <YAxis {...axisProps} allowDecimals={false} width={40} />
-                      <Tooltip cursor={{ fill: "rgba(33,101,197,0.06)" }} content={({ active, payload }) => (active && payload?.length ? <TooltipBox rows={[{ label: "minutes", value: String((payload[0].payload as { minutes: number }).minutes), color: C.s1 }]} /> : null)} />
+                      <Tooltip cursor={{ fill: "rgba(29,112,176,0.06)" }} content={({ active, payload }) => (active && payload?.length ? <TooltipBox rows={[{ label: "minutes", value: String((payload[0].payload as { minutes: number }).minutes), color: C.s1 }]} /> : null)} />
                       <Bar dataKey="minutes" fill={C.s1} radius={[4, 4, 0, 0]} maxBarSize={24} isAnimationActive={false} />
                     </BarChart>
                   </ResponsiveContainer>
@@ -342,7 +342,7 @@ export function TrackerOverview() {
                       <CartesianGrid stroke={C.grid} horizontal={false} />
                       <XAxis type="number" domain={[0, 100]} {...axisProps} tickFormatter={(x) => `${x}%`} />
                       <YAxis type="category" dataKey="topic" {...axisProps} width={130} tick={{ ...axisProps.tick, fontSize: 11 }} />
-                      <Tooltip cursor={{ fill: "rgba(33,101,197,0.06)" }} content={({ active, payload }) => (active && payload?.length ? <TooltipBox title={(payload[0].payload as { topic: string }).topic} rows={[{ label: `of ${(payload[0].payload as { n: number }).n} answers`, value: `${(payload[0].payload as { accuracy: number }).accuracy}%`, color: C.s1 }]} /> : null)} />
+                      <Tooltip cursor={{ fill: "rgba(29,112,176,0.06)" }} content={({ active, payload }) => (active && payload?.length ? <TooltipBox title={(payload[0].payload as { topic: string }).topic} rows={[{ label: `of ${(payload[0].payload as { n: number }).n} answers`, value: `${(payload[0].payload as { accuracy: number }).accuracy}%`, color: C.s1 }]} /> : null)} />
                       <Bar dataKey="accuracy" fill={C.s1} radius={[0, 4, 4, 0]} maxBarSize={18} isAnimationActive={false} />
                     </BarChart>
                   </ResponsiveContainer>

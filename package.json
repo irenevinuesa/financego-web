@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "scenes": "node scripts/build-scenes.mjs"
+    "patterns": "node scripts/build-patterns.mjs"
   },
   "engines": {
     "node": ">=20.9.0"

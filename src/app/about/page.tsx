@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CircleCheck, Clock } from "lucide-react";
-import { HandArrow, Polaroid } from "@/components/art/Polaroid";
+import { Cover, HandArrow } from "@/components/art/Cover";
+import { LogoMark } from "@/components/layout/Logo";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { ButtonLink } from "@/components/ui/Button";
 import { Badge, Card, SectionHeading } from "@/components/ui/primitives";
@@ -58,10 +59,14 @@ export default function AboutPage() {
             </ButtonLink>
           </div>
         </div>
-        <div className="relative mx-auto flex w-full max-w-sm justify-center gap-4 py-6">
-          <Polaroid scene="alps" caption="The Alps" rotate={-5} className="w-40" />
-          <Polaroid scene="campus" caption="Study hard" rotate={4} className="mt-8 w-40" />
-          <div className="absolute -bottom-6 left-6 flex items-end gap-1 text-navy">
+        <div className="relative mx-auto w-full max-w-md pb-12">
+          <Cover name="alps" className="aspect-[4/3] rounded-[2rem] shadow-lift">
+            <div className="flex h-full flex-col items-center justify-center gap-4">
+              <LogoMark className="h-20 w-20 shadow-lift ring-1 ring-white/20" />
+              <p className="font-serif text-2xl text-cream">Learn Finance. Think Bigger. Go Further.</p>
+            </div>
+          </Cover>
+          <div className="absolute bottom-0 left-6 flex items-end gap-1 text-navy">
             <HandArrow className="mb-4 h-8 w-12 -scale-x-100 rotate-[200deg] text-electric" />
             <p className="font-hand text-2xl">Small steps. Big opportunities.</p>
           </div>
@@ -116,8 +121,8 @@ export default function AboutPage() {
           <h2 className="font-serif text-2xl">Content quality</h2>
           <p className="mt-3 text-ink">
             Every calculator formula is unit-tested, worked examples are checked for numerical consistency, and lessons separate assumptions from facts. FinanceGo does not invent
-            market prices, company financials, recruiting deadlines or interview reports. Where a scenario is illustrative, it says so. Landscape artwork is original to
-            FinanceGo.
+            market prices, company financials, recruiting deadlines or interview reports. Where a scenario is illustrative, it says so. All graphics, including the contour-line
+            patterns, are original to FinanceGo.
           </p>
         </Card>
       </section>

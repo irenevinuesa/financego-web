@@ -1,4 +1,4 @@
-import { Scene } from "@/components/art/Scene";
+import { Cover } from "@/components/art/Cover";
 import { ButtonLink } from "@/components/ui/Button";
 
 export default function NotFound() {
@@ -16,7 +16,9 @@ export default function NotFound() {
         </div>
       </div>
       <div className="h-64 overflow-hidden rounded-3xl shadow-lift">
-        <Scene name="trail" className="h-full w-full" />
+        <Cover name="alps" className="h-full w-full">
+          <span className="absolute inset-0 flex items-center justify-center font-serif text-8xl text-cream/90">404</span>
+        </Cover>
       </div>
     </div>
   );
