@@ -230,9 +230,8 @@ export function recentActivity(state: StoreState, limit = 8): ActivityItem[] {
     if (a.at > cur.at) cur.at = a.at;
     practiceByDay.set(d, cur);
   }
-  for (const p of practiceByDay.values()) items.push({ at: p.at, kind: "practice", label: `Answered ${p.n} practice question${p.n === 1 ? "" : "s"}`, href: "/tracker/#practice" });
-  for (const i of state.interviews) items.push({ at: i.at, kind: "interview", label: `Mock interview completed (${i.answered} answers)`, href: "/tracker/#interviews" });
-  for (const app of state.applications) items.push({ at: app.updatedAt, kind: "application", label: `${app.company}: ${STAGE_LABELS[app.stage]}`, href: "/tracker/applications/" });
+  for (const p of practiceByDay.values()) items.push({ at: p.at, kind: "practice", label: `Answered ${p.n} practice question${p.n === 1 ? "" : "s"}`, href: "/practice/" });
+  for (const i of state.interviews) items.push({ at: i.at, kind: "interview", label: `${i.format === "behavioral" ? "Behavioural" : "Technical"} mock interview completed (${i.answered} answers)`, href: i.format === "behavioral" ? "/behaviourals/interview/" : "/technicals/interview/" });
   return items.sort((a, b) => (a.at < b.at ? 1 : -1)).slice(0, limit);
 }
 
@@ -269,8 +268,8 @@ export function hasAnyProgress(state: StoreState) {
     Object.keys(state.lessons).length > 0 ||
     state.attempts.length > 0 ||
     state.interviews.length > 0 ||
-    state.applications.length > 0 ||
-    state.goals.length > 0
+    Object.keys(state.challenge.answers).length > 0 ||
+    state.stories.length > 0
   );
 }
 

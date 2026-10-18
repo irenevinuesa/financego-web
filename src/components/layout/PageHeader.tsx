@@ -51,7 +51,10 @@ export function PageHeader({
   children?: ReactNode;
 }) {
   return (
-    <header className="container-page pt-8 sm:pt-10">
+    // A full-width pale-blue band with faint contour lines; page content follows on white.
+    <header className="relative overflow-hidden border-b border-ice/60">
+      <Cover name="lake" className="absolute inset-0" />
+      <div className="container-page relative pb-10 pt-8 sm:pb-12 sm:pt-10">
       {crumbs && <Breadcrumbs items={crumbs} className="mb-6" />}
       <div className={cn("grid items-center gap-8", scene && "lg:grid-cols-[1.25fr_1fr]")}>
         <div className="max-w-3xl animate-fade-up">
@@ -69,6 +72,7 @@ export function PageHeader({
         )}
       </div>
       {children}
+      </div>
     </header>
   );
 }

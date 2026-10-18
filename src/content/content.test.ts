@@ -4,7 +4,8 @@ import { QOTD_POOL, QUESTIONS, getQuestion, questionOfTheDay } from "./questions
 import { CAREER_GUIDES } from "./careers/guides";
 import { ILLUSTRATIVE_SCENARIOS, ROADMAPS } from "./careers/resources";
 import { TOOLS } from "./tools";
-import type { Question } from "./types";
+import { TOPIC_IDS } from "./taxonomy";
+import type { Question, TopicId } from "./types";
 
 const allLearnQuestions = COURSES.flatMap((c) => [...c.lessons.flatMap((l) => l.check), ...c.assessment]);
 
@@ -34,7 +35,33 @@ function validate(q: Question) {
   if (q.lesson) expect(getLesson(q.lesson.courseId, q.lesson.lessonId), `${q.id} lesson link`).toBeDefined();
 }
 
+/** Section targets for the 500 Challenge (500 in total). */
+const SECTION_TARGETS: Record<TopicId, number> = {
+  accounting: 55,
+  valuation: 55,
+  "corporate-finance": 25,
+  ma: 45,
+  lbo: 45,
+  "capital-markets": 30,
+  industries: 35,
+  restructuring: 15,
+  markets: 30,
+  "fixed-income": 30,
+  derivatives: 25,
+  macro: 25,
+  "credit-risk": 20,
+  quant: 20,
+  "brain-teasers": 30,
+  strategy: 15,
+};
+
 describe("question bank", () => {
+  it("has exactly 500 questions, split by the section targets", () => {
+    expect(QUESTIONS.length).toBe(500);
+    expect(Object.values(SECTION_TARGETS).reduce((a, b) => a + b, 0)).toBe(500);
+    for (const t of TOPIC_IDS) expect(QUESTIONS.filter((q) => q.topic === t).length, t).toBe(SECTION_TARGETS[t]);
+  });
+
   it("has unique ids across the bank, lesson checks and assessments", () => {
     const ids = [...QUESTIONS, ...allLearnQuestions].map((q) => q.id);
     expect(new Set(ids).size).toBe(ids.length);
@@ -49,7 +76,7 @@ describe("question bank", () => {
     expect([...formats].sort()).toEqual(["mcq", "multistep", "numeric", "open"]);
     const byTopic = new Map<string, number>();
     QUESTIONS.forEach((q) => byTopic.set(q.topic, (byTopic.get(q.topic) ?? 0) + 1));
-    expect(byTopic.size).toBe(13);
+    expect(byTopic.size).toBe(TOPIC_IDS.length);
     byTopic.forEach((n) => expect(n).toBeGreaterThanOrEqual(4));
   });
 

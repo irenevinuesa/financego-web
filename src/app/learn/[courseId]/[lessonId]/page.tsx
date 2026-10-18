@@ -39,6 +39,7 @@ export default async function LessonPage({ params }: { params: Promise<{ courseI
         <Breadcrumbs
           items={[
             { href: "/", label: "Home" },
+            { href: "/technicals/", label: "Technicals" },
             { href: "/learn/", label: "Learn" },
             { href: `/learn/${course.id}/`, label: course.title },
             { label: `Lesson ${index + 1}` },

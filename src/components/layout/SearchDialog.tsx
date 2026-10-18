@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight, BookOpen, Calculator, Compass, FileText, GraduationCap, Search, Target, X } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Compass, FileText, GraduationCap, LayoutGrid, Search, Target, UsersRound, X } from "lucide-react";
 import { search, type SearchType } from "@/lib/search";
 import { cn } from "@/lib/cn";
 
@@ -14,9 +14,11 @@ export const TYPE_ICONS: Record<SearchType, typeof BookOpen> = {
   Tool: Calculator,
   Career: Compass,
   Resource: FileText,
+  Section: LayoutGrid,
+  Behavioural: UsersRound,
 };
 
-const SUGGESTIONS = ["WACC", "terminal value", "depreciation", "LBO", "duration", "accretion", "private equity"];
+const SUGGESTIONS = ["WACC", "terminal value", "LBO", "500 Challenge", "tell me about yourself", "weakness", "private equity"];
 
 export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   const router = useRouter();

@@ -8,7 +8,7 @@ import { search, type SearchType } from "@/lib/search";
 import { TYPE_ICONS } from "@/components/layout/SearchDialog";
 import { Badge, Chip, EmptyState } from "@/components/ui/primitives";
 
-const TYPES: SearchType[] = ["Course", "Lesson", "Question", "Tool", "Career", "Resource"];
+const TYPES: SearchType[] = ["Section", "Course", "Lesson", "Question", "Behavioural", "Tool", "Career", "Resource"];
 
 export function SearchPage() {
   const params = useSearchParams();

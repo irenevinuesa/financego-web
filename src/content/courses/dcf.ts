@@ -64,8 +64,8 @@ export const dcfCourse: Course = {
         "Running a standard unlevered DCF on a bank.",
       ],
       check: [
-        mcq("dcf-l1-c1", "valuation", "Unlevered free cash flows should be discounted at:", ["The cost of equity", "The cost of debt", "The WACC", "The risk-free rate"], 2, "Unlevered FCF is available to all capital providers, so it is discounted at the blended cost of all capital, the WACC. Levered FCF goes with the cost of equity."),
-        mcq("dcf-l1-c2", "valuation", "An unlevered DCF directly produces:", ["Equity value", "Enterprise value", "Market capitalisation", "Book value"], 1, "Discounting unlevered FCF at WACC gives enterprise value, the value of the operating business to all investors. You then bridge to equity value."),
+        mcq("dcf-l1-c1", "valuation", "Unlevered free cash flows should be discounted at:", ["The cost of equity", "The WACC", "The cost of debt", "The risk-free rate"], 1, "Unlevered FCF is available to all capital providers, so it is discounted at the blended cost of all capital, the WACC. Levered FCF goes with the cost of equity."),
+        mcq("dcf-l1-c2", "valuation", "An unlevered DCF directly produces:", ["Equity value", "Market capitalisation", "Book value", "Enterprise value"], 3, "Discounting unlevered FCF at WACC gives enterprise value, the value of the operating business to all investors. You then bridge to equity value."),
       ],
     },
     {
@@ -112,7 +112,7 @@ export const dcfCourse: Course = {
       ],
       check: [
         num("dcf-l2-c1", "valuation", "EBIT $300m, tax rate 25%, D&A $60m, capex $80m, increase in NWC $20m. What is unlevered FCF? (in $m)", 185, 0.5, "$m", "NOPAT = 300 × 0.75 = 225. UFCF = 225 + 60 − 80 − 20 = $185m.", { formula: String.raw`EBIT(1-t) + D\&A - Capex - \Delta NWC` }),
-        mcq("dcf-l2-c2", "valuation", "Why is interest expense not subtracted when calculating unlevered FCF?", ["Interest is non-cash", "Unlevered FCF belongs to all capital providers; the cost of debt is reflected in WACC", "Interest is always tax-deductible", "Interest is included in capex"], 1, "UFCF is cash available to debt and equity holders together. Deducting interest and then discounting at a WACC that already includes the cost of debt would count financing twice."),
+        mcq("dcf-l2-c2", "valuation", "Why is interest expense not subtracted when calculating unlevered FCF?", ["Unlevered FCF belongs to all capital providers; the cost of debt is reflected in WACC", "Interest is non-cash", "Interest is always tax-deductible", "Interest is included in capex"], 0, "UFCF is cash available to debt and equity holders together. Deducting interest and then discounting at a WACC that already includes the cost of debt would count financing twice."),
         mcq("dcf-l2-c3", "valuation", "A company's NWC falls by $15m in a forecast year. What is the effect on UFCF?", ["UFCF falls by $15m", "UFCF rises by $15m", "No effect", "It depends on the tax rate"], 1, "A decrease in NWC releases cash, so it increases free cash flow."),
       ],
     },
@@ -168,7 +168,7 @@ export const dcfCourse: Course = {
       ],
       check: [
         num("dcf-l3-c1", "valuation", "Risk-free 3%, beta 1.1, ERP 6%, pre-tax cost of debt 5%, tax 20%, debt 40% of capital. What is the WACC? (in %, two decimals)", 7.36, 0.02, "%", "kₑ = 3% + 1.1 × 6% = 9.6%. After-tax k_d = 5% × 0.8 = 4%. WACC = 0.6 × 9.6% + 0.4 × 4% = 7.36%.", { formula: String.raw`\tfrac{E}{V}k_e + \tfrac{D}{V}k_d(1-t)` }),
-        mcq("dcf-l3-c2", "valuation", "Government bond yields rise by 1 percentage point and nothing else changes. What happens to a DCF valuation?", ["It rises because interest income rises", "It falls because WACC rises", "It is unchanged because cash flows are unchanged", "It depends only on the tax rate"], 1, "The risk-free rate feeds into the cost of equity (and usually the cost of debt), so WACC rises and the present value of every future cash flow falls."),
+        mcq("dcf-l3-c2", "valuation", "Government bond yields rise by 1 percentage point and nothing else changes. What happens to a DCF valuation?", ["It falls because WACC rises", "It rises because interest income rises", "It is unchanged because cash flows are unchanged", "It depends only on the tax rate"], 0, "The risk-free rate feeds into the cost of equity (and usually the cost of debt), so WACC rises and the present value of every future cash flow falls."),
         num("dcf-l3-c3", "valuation", "An unlevered beta is 0.9. The target D/E is 0.5 and the tax rate 25%. What is the levered beta? (two decimals)", 1.24, 0.01, "", "β_L = 0.9 × [1 + 0.75 × 0.5] = 0.9 × 1.375 = 1.2375 ≈ 1.24."),
       ],
     },
@@ -212,7 +212,7 @@ export const dcfCourse: Course = {
       ],
       check: [
         num("dcf-l4-c1", "valuation", "Final-year UFCF is $200m, terminal growth 2% and WACC 8%. What is the terminal value at the end of the forecast? (in $m)", 3400, 1, "$m", "TV = 200 × 1.02 / (0.08 − 0.02) = 204 / 0.06 = $3,400m."),
-        mcq("dcf-l4-c2", "valuation", "Your perpetuity-growth terminal value implies 22x EBITDA, while peers trade around 9x. What is the most likely issue?", ["The forecast period is too long", "The terminal growth rate is too high or WACC too low", "Net debt is too high", "Nothing; growth methods always give high multiples"], 1, "A very high implied multiple usually means the growth/WACC spread is too narrow. Revisit both assumptions."),
+        mcq("dcf-l4-c2", "valuation", "Your perpetuity-growth terminal value implies 22x EBITDA, while peers trade around 9x. What is the most likely issue?", ["The forecast period is too long", "Net debt is too high", "Nothing; growth methods always give high multiples", "The terminal growth rate is too high or WACC too low"], 3, "A very high implied multiple usually means the growth/WACC spread is too narrow. Revisit both assumptions."),
         mcq("dcf-l4-c3", "valuation", "Terminal growth rises from 2% to 3% with WACC at 8%. The terminal value rises by roughly:", ["1%", "10%", "22%", "50%"], 2, "TV goes from FCF × 1.02 / 0.06 = 17.0x FCF to FCF × 1.03 / 0.05 = 20.6x FCF, about 21–22% higher."),
       ],
     },
@@ -263,7 +263,7 @@ export const dcfCourse: Course = {
       ],
       check: [
         num("dcf-l5-c1", "valuation", "EV $5,000m, debt $1,200m, cash $300m, preferred $100m, minority interest $200m. What is equity value? (in $m)", 3800, 0.5, "$m", "5,000 − 1,200 + 300 − 100 − 200 = $3,800m."),
-        mcq("dcf-l5-c2", "valuation", "A company issues $200m of new shares and keeps the cash. Immediately afterwards:", ["EV rises by $200m", "Equity value rises by $200m and EV is unchanged", "Both EV and equity value are unchanged", "Equity value falls"], 1, "Equity value rises by the cash raised, but net debt falls by the same amount, so EV is unchanged."),
+        mcq("dcf-l5-c2", "valuation", "A company issues $200m of new shares and keeps the cash. Immediately afterwards:", ["EV rises by $200m", "Both EV and equity value are unchanged", "Equity value rises by $200m and EV is unchanged", "Equity value falls"], 2, "Equity value rises by the cash raised, but net debt falls by the same amount, so EV is unchanged."),
         num("dcf-l5-c3", "valuation", "20m options with a $25 strike; the share price is $40. How many net new shares does the treasury stock method add? (millions)", 7.5, 0.01, "m", "Proceeds = 20 × 25 = $500m; repurchased = 500/40 = 12.5m; net new shares = 20 − 12.5 = 7.5m."),
       ],
     },
@@ -305,7 +305,7 @@ export const dcfCourse: Course = {
       ],
       check: [
         mcq("dcf-l6-c1", "valuation", "In a WACC (rows) × growth (columns) sensitivity table, where is the lowest value usually found?", ["Lowest WACC, highest growth", "Highest WACC, lowest growth", "The base case", "It is random"], 1, "Value falls with higher WACC and with lower growth, so the high-WACC, low-growth corner is the minimum."),
-        mcq("dcf-l6-c2", "valuation", "A DCF assumes 12% revenue growth for 10 years while capex falls to 1% of revenue. What is the main concern?", ["The tax rate", "Growth without reinvestment implies an implausibly high return on capital", "The terminal growth rate is too low", "Nothing; lower capex increases value"], 1, "Growth must be funded. High growth with almost no reinvestment implies near-infinite returns on new capital."),
+        mcq("dcf-l6-c2", "valuation", "A DCF assumes 12% revenue growth for 10 years while capex falls to 1% of revenue. What is the main concern?", ["Growth without reinvestment implies an implausibly high return on capital", "The tax rate", "The terminal growth rate is too low", "Nothing; lower capex increases value"], 0, "Growth must be funded. High growth with almost no reinvestment implies near-infinite returns on new capital."),
       ],
     },
   ],
@@ -315,7 +315,7 @@ export const dcfCourse: Course = {
     num("dcf-a3", "valuation", "Final-year UFCF $120m, g 2.5%, WACC 8.5%. Terminal value? (in $m)", 2050, 1, "$m", "TV = 120 × 1.025 / 0.06 = 123 / 0.06 = $2,050m."),
     mcq("dcf-a4", "valuation", "Which change increases a DCF enterprise value, all else equal?", ["Higher beta", "Higher risk-free rate", "Lower increase in working capital", "Higher capex"], 2, "A smaller increase in NWC means more free cash flow. The other three reduce value."),
     num("dcf-a5", "valuation", "EV $3,000m, debt $900m, cash $200m, minority interest $100m, 50m diluted shares. Value per share? (in $)", 44, 0.01, "$", "Equity = 3,000 − 900 + 200 − 100 = $2,200m; per share = 2,200 / 50 = $44.00."),
-    mcq("dcf-a6", "valuation", "A company borrows $100m and pays it out as a special dividend. Ignoring taxes and distress costs:", ["EV falls by $100m", "Equity value falls by $100m and EV is unchanged", "Both rise", "EV rises by $100m"], 1, "The operating business is unchanged, so EV is unchanged. Net debt rises by $100m, so equity value falls by $100m."),
+    mcq("dcf-a6", "valuation", "A company borrows $100m and pays it out as a special dividend. Ignoring taxes and distress costs:", ["EV falls by $100m", "Both rise", "EV rises by $100m", "Equity value falls by $100m and EV is unchanged"], 3, "The operating business is unchanged, so EV is unchanged. Net debt rises by $100m, so equity value falls by $100m."),
     mcq("dcf-a7", "valuation", "Why does a 1-point increase in WACC reduce terminal value proportionally more than near-term cash flows?", ["Terminal value uses EBITDA", "TV depends on the small spread WACC − g and is also discounted over the full forecast", "Near-term cash flows are not discounted", "Terminal value is not discounted"], 1, "A small spread makes TV highly sensitive to WACC, and the higher rate also discounts it over N years."),
     mcq("dcf-a8", "valuation", "Your DCF's terminal value is 92% of enterprise value. The best response is to:", ["Present it; this is normal", "Shorten the forecast", "Scrutinise terminal assumptions and check whether the forecast reaches a steady state", "Switch to book value"], 2, "A very high TV share means the answer depends almost entirely on terminal assumptions. Check that the final year is a sensible steady state and cross-check the implied multiple."),
   ],

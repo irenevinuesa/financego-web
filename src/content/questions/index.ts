@@ -2,9 +2,12 @@ import { COURSES } from "../courses";
 import type { Question, QuestionKind, TopicId } from "../types";
 import { CORE_QUESTIONS } from "./bank-core";
 import { MARKETS_QUESTIONS } from "./bank-markets";
+import { BANK_A } from "./bank-a";
+import { BANK_B } from "./bank-b";
+import { BANK_C } from "./bank-c";
 
-/** The Practice question bank. */
-export const QUESTIONS: Question[] = [...CORE_QUESTIONS, ...MARKETS_QUESTIONS];
+/** The Practice question bank (and the 500 Challenge's source). */
+export const QUESTIONS: Question[] = [...CORE_QUESTIONS, ...MARKETS_QUESTIONS, ...BANK_A, ...BANK_B, ...BANK_C];
 
 const BY_ID = new Map(QUESTIONS.map((q) => [q.id, q]));
 

@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 
 /* Shared chart styling (validated palette: blue / orange / aqua on white). */
 export const C = {
-  s1: "#1d70b0",
+  s1: "#114779",
   s2: "#eb6834",
   s3: "#1baf7a",
   navy: "#114779",

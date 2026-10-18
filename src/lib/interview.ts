@@ -4,7 +4,7 @@
  * plainly, and the scores are labelled as indicators, not expert assessments.
  */
 
-import { INTERVIEW_ITEMS } from "@/content/interview/items";
+import { ALL_INTERVIEW_ITEMS, itemsForScope, type InterviewScope } from "@/content/interview";
 import type { Bilingual, Difficulty, InterviewConcept, InterviewFormat, InterviewItem, Lang, TopicId, TrackId } from "@/content/types";
 import { isWithinTolerance } from "./format";
 import { normalize } from "./text";
@@ -148,6 +148,8 @@ export function evaluateAnswer(
 export type InterviewType = InterviewFormat | "mixed";
 
 export interface InterviewConfig {
+  /** Technical mock (Technicals) or behavioural mock (Behaviourals). */
+  scope: InterviewScope;
   track: TrackId;
   difficulty: Difficulty;
   length: 3 | 5 | 8;
@@ -194,7 +196,7 @@ export function selectItems(config: InterviewConfig, random: () => number = Math
   const chosen: InterviewItem[] = [];
   for (const stage of stages) {
     const pool = shuffle(
-      INTERVIEW_ITEMS.filter((i) => stage.filter(i) && !chosen.includes(i)),
+      itemsForScope(config.scope).filter((i) => stage.filter(i) && !chosen.includes(i)),
       random,
     );
     // Mixed interviews: at most one behavioural question, and it opens the interview.
@@ -214,14 +216,25 @@ export function selectItems(config: InterviewConfig, random: () => number = Math
     if (b.format === "behavioral" && a.format !== "behavioral") return 1;
     return DIFF_RANK[a.difficulty] - DIFF_RANK[b.difficulty];
   });
+  // Behavioural interviews open with "Tell me about yourself" and close with "Any questions for me?", as real ones do.
+  if (config.scope === "behavioural") {
+    const opener = ALL_INTERVIEW_ITEMS.find((i) => i.id === BEHAVIOURAL_OPENER);
+    const closer = ALL_INTERVIEW_ITEMS.find((i) => i.id === BEHAVIOURAL_CLOSER);
+    const middle = chosen.filter((i) => i !== opener && i !== closer);
+    const ordered = config.length >= 3 && opener && closer ? [opener, ...middle.slice(0, config.length - 2), closer] : [...(opener ? [opener] : []), ...middle];
+    return { items: ordered.slice(0, config.length), relaxed };
+  }
   return { items: chosen.slice(0, config.length), relaxed };
 }
+
+const BEHAVIOURAL_OPENER = "iv-b-yourself";
+const BEHAVIOURAL_CLOSER = "iv-b-questions";
 
 /* ───────────── Interviewer phrases ───────────── */
 
 export const PHRASES = {
   intro: {
-    en: (track: string, n: number) => `Thanks for coming in. This is a ${track} interview with ${n} main questions, each with a follow-up. Answer as you would out loud: be direct, then explain your reasoning.`,
+    en: (track: string, n: number) => `Thanks for coming in. This is ${/^[aeiou]/i.test(track) ? "an" : "a"} ${track} interview with ${n} main questions, each with a follow-up. Answer as you would out loud: be direct, then explain your reasoning.`,
     es: (track: string, n: number) => `Gracias por venir. Es una entrevista de ${track} con ${n} preguntas principales, cada una con una repregunta. Responde como lo harías en voz alta: ve al grano y después explica tu razonamiento.`,
   },
   next: { en: ["Let's move on.", "Next question.", "OK, a different topic."], es: ["Pasemos a otra cosa.", "Siguiente pregunta.", "Bien, cambiemos de tema."] },
@@ -267,7 +280,7 @@ export interface InterviewSummary {
 }
 
 export function getItem(id: string): InterviewItem | undefined {
-  return INTERVIEW_ITEMS.find((i) => i.id === id);
+  return ALL_INTERVIEW_ITEMS.find((i) => i.id === id);
 }
 
 export function summarize(turns: Turn[], lang: Lang): InterviewSummary {

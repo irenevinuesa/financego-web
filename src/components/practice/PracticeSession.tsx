@@ -183,7 +183,7 @@ export function PracticeSession() {
                 Review incorrect answers
               </ButtonLink>
             )}
-            <ButtonLink href="/tracker/#practice" variant="ghost">
+            <ButtonLink href="/dashboard/" variant="ghost">
               See your progress
             </ButtonLink>
           </div>
@@ -244,7 +244,7 @@ export function PracticeSession() {
   return (
     <div className="space-y-5">
       <StudyTimer />
-      <Card className="sticky top-[4.5rem] z-10 p-4">
+      <Card className="sticky top-[4.75rem] z-10 p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-sm font-semibold text-navy">{title}</p>

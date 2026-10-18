@@ -45,7 +45,7 @@ export function Waterfall({ steps, title, format, height = 260 }: { steps: Water
             <XAxis dataKey="label" {...axisProps} interval={0} tick={{ ...axisProps.tick, fontSize: 11 }} />
             <YAxis {...axisProps} width={56} tickFormatter={(v) => format(v)} />
             <Tooltip
-              cursor={{ fill: "rgba(29,112,176,0.06)" }}
+              cursor={{ fill: "rgba(17,71,121,0.06)" }}
               content={({ active, payload }) => {
                 if (!active || !payload?.length) return null;
                 const d = payload[0].payload as (typeof data)[number];

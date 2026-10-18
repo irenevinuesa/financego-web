@@ -5,8 +5,10 @@
   /* Brand palette */
   --color-navy: #114779;
   --color-navy-deep: #0d3861;
-  --color-electric: #1d70b0;
-  --color-electric-dark: #1a67a3;
+  --color-electric: #114779;
+  --color-electric-dark: #0d3861;
+  /* Warm cream page background; white cards and pale-blue bands sit on top of it. */
+  --color-page: #f7f4ee;
   --color-cream: #f7f4ee;
   --color-cream-deep: #efeae0;
   --color-ice: #a9d2e8;
@@ -25,7 +27,7 @@
   --color-warning-ink: #8a5a00;
 
   /* Chart slots (validated for CVD separation on white) */
-  --color-chart-1: #1d70b0;
+  --color-chart-1: #114779;
   --color-chart-2: #eb6834;
   --color-chart-3: #1baf7a;
   --color-chart-grid: #e8ecf0;
@@ -72,7 +74,7 @@
     scroll-padding-top: 5rem;
   }
   body {
-    background: var(--color-cream);
+    background: var(--color-page);
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-feature-settings: "cv11", "ss01";

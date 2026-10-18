@@ -3,15 +3,18 @@
  * build time; nothing leaves the browser.
  */
 
+import { BEHAVIOURAL_QUESTIONS, BQ_CATEGORIES } from "@/content/behaviourals/questions";
+import { GUIDE_SECTIONS } from "@/content/behaviourals/guide";
 import { CAREER_GUIDES } from "@/content/careers/guides";
 import { ROADMAPS } from "@/content/careers/resources";
 import { ALL_COURSES, COURSES, lessonHref } from "@/content/courses";
 import { QUESTIONS } from "@/content/questions";
-import { CATEGORIES, TOPICS } from "@/content/taxonomy";
+import { CATEGORIES, TOPIC_IDS, TOPICS } from "@/content/taxonomy";
+import { sectionInfo } from "@/content/practice-sections";
 import { TOOLS } from "@/content/tools";
 import { normalize } from "./text";
 
-export type SearchType = "Course" | "Lesson" | "Question" | "Tool" | "Career" | "Resource";
+export type SearchType = "Section" | "Course" | "Lesson" | "Question" | "Behavioural" | "Tool" | "Career" | "Resource";
 
 export interface SearchEntry {
   type: SearchType;
@@ -37,7 +40,25 @@ function blocksText(blocks: { type: string; [k: string]: unknown }[]): string {
 }
 
 function buildIndex(): SearchEntry[] {
-  const entries: SearchEntry[] = [];
+  const entries: SearchEntry[] = [
+    { type: "Section", title: "Technicals", description: "Learn, Practice, the 500 Challenge and the technical mock interview.", href: "/technicals/", body: "technical interview preparation hub", badge: "Technicals" },
+    { type: "Section", title: "500 Challenge", description: "500 mixed questions that unlock one by one, with a list of missed questions to repeat.", href: "/challenge/", body: "challenge recruiting season unlock stages missed repeat five hundred", badge: "Technicals" },
+    { type: "Section", title: "Practice by section", description: "Question bank organised by section, with progress and accuracy.", href: "/practice/", body: "practice questions sections bank", badge: "Technicals" },
+    { type: "Section", title: "Technical mock interview", description: "Scripted technical interviews with follow-ups and feedback.", href: "/technicals/interview/", body: "interview simulator mock technical case market pitch", badge: "Technicals" },
+    { type: "Section", title: "Behaviourals guide", description: "What behavioural interviews test and how to answer: STAR, your pitch, why finance.", href: "/behaviourals/", body: GUIDE_SECTIONS.map((g) => `${g.title} ${g.intro} ${g.points.map((p) => `${p.title} ${p.body}`).join(" ")}`).join(" "), badge: "Behaviourals" },
+    { type: "Section", title: "Behavioural question library", description: "Common behavioural and fit questions by category.", href: "/behaviourals/questions/", body: "behavioural fit questions library categories", badge: "Behaviourals" },
+    { type: "Section", title: "Story bank", description: "Write your STAR stories once and map them to question categories.", href: "/behaviourals/stories/", body: "story bank star stories situation task action result", badge: "Behaviourals" },
+    { type: "Section", title: "Behavioural mock interview", description: "Scripted behavioural interviews with follow-ups and feedback.", href: "/behaviourals/interview/", body: "interview simulator mock behavioural fit", badge: "Behaviourals" },
+  ];
+
+  for (const t of TOPIC_IDS) {
+    const info = sectionInfo(t);
+    entries.push({ type: "Section", title: `${TOPICS[t].label} practice`, description: info.intro || `Practice questions on ${TOPICS[t].label}.`, href: `/practice/${t}/`, body: info.focus.join(" "), badge: "Practice" });
+  }
+
+  for (const q of BEHAVIOURAL_QUESTIONS) {
+    entries.push({ type: "Behavioural", title: q.question, description: BQ_CATEGORIES[q.category], href: "/behaviourals/questions/", body: `${q.lookFor.join(" ")} ${q.structure}`, badge: "Behaviourals" });
+  }
 
   for (const c of ALL_COURSES) {
     entries.push({
@@ -142,7 +163,7 @@ export function search(query: string, opts: { types?: SearchType[]; limit?: numb
     }
     if (!allMatched) continue;
     if (title.includes(q)) score += 10;
-    if (entry.type === "Course" || entry.type === "Tool" || entry.type === "Career") score += 2;
+    if (entry.type === "Section" || entry.type === "Course" || entry.type === "Tool" || entry.type === "Career") score += 2;
     scored.push({ entry, score });
   }
 

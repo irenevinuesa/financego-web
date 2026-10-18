@@ -19,10 +19,12 @@ const PRINCIPLES = [
 
 const V1 = [
   "Six complete courses with interactive lessons, knowledge checks and final assessments",
-  "A question bank with five formats, filters and six practice modes",
-  "A scripted interview simulator in English and Spanish with rule-based feedback",
+  "Practice by section, with five question formats, filters and six practice modes",
+  "The 500 Challenge: 500 mixed questions that unlock one by one, with a missed list to repeat",
+  "Technical and behavioural mock interviews in English and Spanish with rule-based feedback",
+  "A behavioural guide, question library and STAR story bank",
   "WACC, DCF, compound interest and bond pricing tools with tested formulas",
-  "A tracker for learning, skills, practice, interviews, applications and goals",
+  "A dashboard for learning, practice, the challenge, interviews and stories",
   "Ten career guides, roadmaps, templates and interactive checklists",
 ];
 

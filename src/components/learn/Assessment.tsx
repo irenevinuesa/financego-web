@@ -69,8 +69,8 @@ export function Assessment({ courseId, questions }: { courseId: string; question
                 Next course: {nextCourse.title} <ArrowRight className="h-4 w-4" />
               </ButtonLink>
             )}
-            <ButtonLink href="/tracker/" variant="ghost">
-              View your Tracker
+            <ButtonLink href="/dashboard/" variant="ghost">
+              View your dashboard
             </ButtonLink>
           </div>
         </Card>

@@ -26,7 +26,7 @@ export function Catalog({ courses }: { courses: CourseMeta[] }) {
 
   return (
     <div>
-      <div className="sticky top-16 z-20 -mx-4 border-b border-line bg-cream/90 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border sm:bg-white/90 sm:px-4">
+      <div className="sticky top-[4.25rem] z-20 -mx-4 border-b border-line bg-cream/90 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border sm:bg-white/90 sm:px-4">
         <div className="flex flex-wrap items-center gap-2">
           <div className="relative min-w-[12rem] flex-1">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted" />

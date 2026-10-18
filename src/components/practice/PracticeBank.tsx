@@ -20,20 +20,21 @@ function toQuery(f: BankFilters) {
   return p.toString();
 }
 
-export function PracticeBank() {
+export function PracticeBank({ fixedTopic }: { fixedTopic?: TopicId } = {}) {
   const state = useStore();
   const hydrated = useHydrated();
   const latest = useMemo(() => latestAttempts(state), [state]);
-  const [f, setF] = useState<BankFilters>({ topic: "", difficulty: "", type: "", track: "", maxMinutes: 0, status: "" });
+  const blank: BankFilters = { topic: fixedTopic ?? "", difficulty: "", type: "", track: "", maxMinutes: 0, status: "" };
+  const [f, setF] = useState<BankFilters>(blank);
   const set = <K extends keyof BankFilters>(k: K, v: BankFilters[K]) => setF((p) => ({ ...p, [k]: v }));
   const list = useMemo(() => applyFilters(QUESTIONS, f, hydrated ? latest : new Map()), [f, latest, hydrated]);
-  const active = Object.values(f).some((v) => v !== "" && v !== 0);
+  const active = Object.entries(f).some(([k, v]) => v !== "" && v !== 0 && !(k === "topic" && fixedTopic));
 
   return (
     <div>
       <div className="rounded-2xl border border-line bg-white p-4 shadow-card">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          <Select value={f.topic} onChange={(e) => set("topic", e.target.value as TopicId | "")} aria-label="Topic">
+          <Select value={f.topic} onChange={(e) => set("topic", e.target.value as TopicId | "")} aria-label="Topic" className={fixedTopic ? "hidden" : undefined}>
             <option value="">All topics</option>
             {TOPIC_IDS.map((t) => (
               <option key={t} value={t}>
@@ -80,7 +81,7 @@ export function PracticeBank() {
             </Chip>
           ))}
           {active && (
-            <button type="button" onClick={() => setF({ topic: "", difficulty: "", type: "", track: "", maxMinutes: 0, status: "" })} className="ml-auto inline-flex items-center gap-1 text-sm text-ink-muted hover:text-electric">
+            <button type="button" onClick={() => setF(blank)} className="ml-auto inline-flex items-center gap-1 text-sm text-ink-muted hover:text-electric">
               <RotateCcw className="h-3.5 w-3.5" /> Clear filters
             </button>
           )}

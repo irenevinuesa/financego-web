@@ -180,9 +180,11 @@ export const ROADMAPS: Roadmap[] = [
       { title: "Learn the language", detail: "Time value of money, risk and value creation.", href: "/learn/finance-101/", cta: "Finance 101" },
       { title: "Master the statements", detail: "The three statements and how they link.", href: "/learn/accounting-fundamentals/", cta: "Accounting Fundamentals" },
       { title: "Value a company", detail: "DCF, WACC, terminal value and the equity bridge.", href: "/learn/dcf/", cta: "DCF course" },
-      { title: "Drill technicals", detail: "Accounting, valuation and M&A questions until you score 80%+.", href: "/practice/session/?mode=interview&track=investment-banking", cta: "IB practice set" },
+      { title: "Drill technicals", detail: "Accounting and valuation questions until you score 80%+.", href: "/practice/accounting/", cta: "Accounting practice" },
+      { title: "Deal technicals", detail: "M&A questions, including accretion/dilution and deal rationale.", href: "/practice/ma/", cta: "M&A practice" },
       { title: "Build it yourself", detail: "Run the DCF tool and explain every assumption.", href: "/tools/dcf/", cta: "DCF Builder" },
-      { title: "Simulate interviews", detail: "Three technical mock interviews, then review the feedback.", href: "/interview/?track=investment-banking", cta: "Interview Simulator" },
+      { title: "Simulate interviews", detail: "Three technical mock interviews, then review the feedback.", href: "/technicals/interview/?track=investment-banking", cta: "Technical mock interview" },
+      { title: "Rehearse your story", detail: "“Why banking?”, your CV walk-through and teamwork questions.", href: "/behaviourals/interview/", cta: "Behavioural mock interview" },
     ],
   },
   {
@@ -193,7 +195,7 @@ export const ROADMAPS: Roadmap[] = [
       { title: "Statements as a system", detail: "Linking the statements and working capital.", href: "/learn/accounting-fundamentals/linking-statements/", cta: "Linking the statements" },
       { title: "From EBIT to free cash flow", detail: "Build unlevered FCF line by line.", href: "/learn/dcf/unlevered-fcf/", cta: "Unlevered FCF lesson" },
       { title: "The discount rate", detail: "WACC and how it moves enterprise value.", href: "/learn/dcf/wacc/", cta: "WACC lesson" },
-      { title: "Practise valuation", detail: "Valuation question set with feedback.", href: "/practice/session/?mode=topic&topic=valuation", cta: "Valuation mastery" },
+      { title: "Practise valuation", detail: "Valuation question set with feedback.", href: "/practice/valuation/", cta: "Valuation practice" },
       { title: "Use the tools", detail: "WACC Calculator and DCF Builder.", href: "/tools/wacc/", cta: "WACC Calculator" },
     ],
   },
@@ -203,9 +205,10 @@ export const ROADMAPS: Roadmap[] = [
     summary: "What changes when you move from advising on deals to investing in them.",
     steps: [
       { title: "Sharpen valuation", detail: "Terminal value, sensitivities and sanity checks.", href: "/learn/dcf/sensitivity/", cta: "Sensitivity lesson" },
-      { title: "LBO intuition", detail: "Paper LBOs, IRR and MOIC rules of thumb.", href: "/practice/session/?mode=topic&topic=lbo", cta: "LBO practice" },
+      { title: "LBO intuition", detail: "Paper LBOs, IRR and MOIC rules of thumb.", href: "/practice/lbo/", cta: "LBO practice" },
       { title: "Think like an investor", detail: "Business quality, value creation and risks.", href: "/career/private-equity/", cta: "PE career guide" },
-      { title: "Simulate interviews", detail: "Private equity technical and case interviews.", href: "/interview/?track=private-equity", cta: "PE interview" },
+      { title: "Simulate interviews", detail: "Private equity technical and case interviews.", href: "/technicals/interview/?track=private-equity", cta: "PE mock interview" },
+      { title: "Explain the move", detail: "“Why private equity?” and the deals on your CV.", href: "/behaviourals/interview/", cta: "Behavioural mock interview" },
     ],
   },
   {
@@ -215,9 +218,10 @@ export const ROADMAPS: Roadmap[] = [
     steps: [
       { title: "Risk and discounting", detail: "Why rates move asset prices.", href: "/learn/finance-101/time-value-of-money/", cta: "Time value of money" },
       { title: "Bond maths", detail: "Price, duration and convexity, hands-on.", href: "/tools/bond-pricing/", cta: "Bond Pricing tool" },
-      { title: "Markets and derivatives questions", detail: "Practise until the reasoning is automatic.", href: "/practice/session/?mode=interview&track=sales-trading", cta: "S&T practice set" },
-      { title: "Brain teasers", detail: "Probability and mental maths.", href: "/practice/session/?mode=topic&topic=brain-teasers", cta: "Brain teasers" },
-      { title: "Simulate interviews", detail: "Market discussions and trade pitches.", href: "/interview/?track=sales-trading", cta: "S&T interview" },
+      { title: "Markets questions", detail: "Rates, FX and equity reactions to data and policy, until the reasoning is automatic.", href: "/practice/markets/", cta: "Markets practice" },
+      { title: "Derivatives questions", detail: "Option payoffs, the Greeks and volatility.", href: "/practice/derivatives/", cta: "Derivatives practice" },
+      { title: "Brain teasers", detail: "Probability and mental maths.", href: "/practice/brain-teasers/", cta: "Brain teasers" },
+      { title: "Simulate interviews", detail: "Market discussions and trade pitches.", href: "/technicals/interview/?track=sales-trading", cta: "S&T mock interview" },
     ],
   },
   {
@@ -227,8 +231,9 @@ export const ROADMAPS: Roadmap[] = [
     steps: [
       { title: "Valuation toolkit", detail: "DCF and the equity bridge.", href: "/learn/dcf/", cta: "DCF course" },
       { title: "Read the statements critically", detail: "Accruals, working capital and earnings quality.", href: "/learn/accounting-fundamentals/accruals/", cta: "Accruals lesson" },
-      { title: "Valuation and markets questions", detail: "Practise the trap questions.", href: "/practice/session/?mode=interview&track=hedge-funds", cta: "HF practice set" },
-      { title: "Pitch practice", detail: "Stock pitch interviews with follow-ups.", href: "/interview/?track=hedge-funds&type=pitch", cta: "Pitch interview" },
+      { title: "Valuation questions", detail: "Practise the trap questions on multiples and earnings quality.", href: "/practice/valuation/", cta: "Valuation practice" },
+      { title: "Markets questions", detail: "How macro and rates feed into the assets you pitch.", href: "/practice/markets/", cta: "Markets practice" },
+      { title: "Pitch practice", detail: "Stock pitch interviews with follow-ups.", href: "/technicals/interview/?track=hedge-funds&type=pitch", cta: "Pitch mock interview" },
     ],
   },
 ];
@@ -246,7 +251,7 @@ export const CHECKLISTS: Checklist[] = [
     items: [
       { id: "cv", text: "One-page CV reviewed by at least two people" },
       { id: "linkedin", text: "LinkedIn profile consistent with the CV" },
-      { id: "list", text: "Target list of firms and roles in the Application Tracker" },
+      { id: "list", text: "Target list of firms and roles you plan to apply to" },
       { id: "dates", text: "Checked each firm's official careers page for application windows" },
       { id: "why", text: "Drafted “Why this field?” and “Why this firm?” answers" },
       { id: "network", text: "Spoken to at least three people working in the field" },

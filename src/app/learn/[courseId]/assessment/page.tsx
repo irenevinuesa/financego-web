@@ -29,6 +29,7 @@ export default async function AssessmentPage({ params }: { params: Promise<{ cou
         description={<p>{course.assessment.length} questions covering the whole course. Score 70% or more to complete the course. Feedback appears after you submit.</p>}
         crumbs={[
           { href: "/", label: "Home" },
+          { href: "/technicals/", label: "Technicals" },
           { href: "/learn/", label: "Learn" },
           { href: `/learn/${course.id}/`, label: course.title },
           { label: "Assessment" },

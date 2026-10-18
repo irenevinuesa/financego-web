@@ -1,17 +1,24 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
-import { MAIN_NAV } from "./nav";
 
 const COLUMNS = [
-  { title: "Platform", links: MAIN_NAV.map((n) => ({ href: n.href, label: n.label })) },
   {
-    title: "You",
+    title: "Technicals",
     links: [
+      { href: "/learn/", label: "Learn" },
+      { href: "/practice/", label: "Practice" },
+      { href: "/challenge/", label: "500 Challenge" },
+      { href: "/technicals/interview/", label: "Mock interview" },
+    ],
+  },
+  {
+    title: "Prepare",
+    links: [
+      { href: "/behaviourals/", label: "Behaviourals" },
+      { href: "/tools/", label: "Tools" },
+      { href: "/career/", label: "Career" },
       { href: "/dashboard/", label: "Dashboard" },
-      { href: "/tracker/applications/", label: "Applications" },
-      { href: "/tracker/goals/", label: "Goals" },
       { href: "/settings/", label: "Settings & data" },
-      { href: "/account/", label: "Accounts (V2)" },
     ],
   },
   {
@@ -28,7 +35,7 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="mt-24 bg-navy-deep text-ice-soft">
+    <footer className="mt-24 bg-navy text-ice-soft">
       <div className="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div className="max-w-sm">
           <Logo light />

@@ -15,7 +15,10 @@ export type TopicId =
   | "credit-risk"
   | "quant"
   | "brain-teasers"
-  | "strategy";
+  | "strategy"
+  | "capital-markets"
+  | "industries"
+  | "restructuring";
 
 export type TrackId =
   | "investment-banking"

@@ -10,12 +10,12 @@ import { cn } from "@/lib/cn";
  * as a CSS mask, so their colour comes from here.
  */
 const VARIANTS: Record<SceneName, { background: string; line: string; opacity: number; ink: "light" | "dark" }> = {
-  alps: { background: "linear-gradient(135deg, #114779 0%, #0d3861 100%)", line: "#faf0e6", opacity: 0.2, ink: "light" },
-  summit: { background: "linear-gradient(160deg, #0d3861 0%, #0a2c4c 100%)", line: "#faf0e6", opacity: 0.18, ink: "light" },
-  nyc: { background: "linear-gradient(135deg, #1d5790 0%, #0d3861 100%)", line: "#faf0e6", opacity: 0.18, ink: "light" },
-  london: { background: "linear-gradient(135deg, #1d70b0 0%, #114779 100%)", line: "#faf0e6", opacity: 0.2, ink: "light" },
+  alps: { background: "#114779", line: "#faf0e6", opacity: 0.2, ink: "light" },
+  summit: { background: "#114779", line: "#faf0e6", opacity: 0.18, ink: "light" },
+  nyc: { background: "#114779", line: "#faf0e6", opacity: 0.18, ink: "light" },
+  london: { background: "#114779", line: "#faf0e6", opacity: 0.2, ink: "light" },
   trail: { background: "linear-gradient(135deg, #e4f1f8 0%, #c9e2ef 100%)", line: "#114779", opacity: 0.22, ink: "dark" },
-  lake: { background: "linear-gradient(135deg, #eef6fb 0%, #d6e9f4 100%)", line: "#1d70b0", opacity: 0.24, ink: "dark" },
+  lake: { background: "linear-gradient(135deg, #eef6fb 0%, #d6e9f4 100%)", line: "#114779", opacity: 0.24, ink: "dark" },
   campus: { background: "linear-gradient(135deg, #f7f4ee 0%, #ebe3d3 100%)", line: "#114779", opacity: 0.16, ink: "dark" },
 };
 

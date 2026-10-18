@@ -42,6 +42,7 @@ export default async function CoursePage({ params }: { params: Promise<{ courseI
   const course = getCourse(courseId);
   const crumbs = [
     { href: "/", label: "Home" },
+    { href: "/technicals/", label: "Technicals" },
     { href: "/learn/", label: "Learn" },
     { label: meta.title },
   ];

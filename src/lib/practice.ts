@@ -74,7 +74,7 @@ export function buildQueue(mode: PracticeMode, filters: BankFilters, latest: Map
       return [...filtered].sort((a, b) => weight(b) - weight(a)).slice(0, MODES.interview.size!);
     }
     case "review":
-      return shuffle(QUESTIONS.filter((q) => incorrectIds.includes(q.id)));
+      return shuffle(QUESTIONS.filter((q) => incorrectIds.includes(q.id) && (!filters.topic || q.topic === filters.topic)));
     case "custom":
       return filtered.slice(0, MODES.custom.size!);
   }

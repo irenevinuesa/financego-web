@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s · FinanceGo",
   },
   description:
-    "Interactive finance education and career preparation: structured courses, a technical question bank, a scripted interview simulator, working financial tools and a personal tracker.",
+    "Interactive finance education and career preparation: technical courses, practice by section, the 500 Challenge, behavioural interview preparation, mock interviews, working financial tools and in-depth career guides.",
   icons: {
     icon: [
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },

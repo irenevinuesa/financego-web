@@ -76,11 +76,7 @@ export default function CareerPage() {
                 Recruitment calendar <Badge tone="outline">Planned · V3</Badge>
               </span>
               <span className="mt-1 block text-sm text-ink-muted">
-                Verified deadlines with sources and update dates. Until then, track your own dates in the{" "}
-                <Link href="/tracker/applications/" className="text-electric hover:underline">
-                  Application Tracker
-                </Link>
-                . FinanceGo will never show invented vacancies or deadlines.
+                Verified deadlines with sources and update dates. Until then, check each firm's official careers page. FinanceGo will never show invented vacancies or deadlines.
               </span>
             </span>
           </Card>

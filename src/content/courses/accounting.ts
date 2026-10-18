@@ -67,9 +67,9 @@ export const accountingFundamentals: Course = {
         "Forgetting that dividends reduce retained earnings but never appear on the income statement.",
       ],
       check: [
-        mcq("acc-l1-c1", "accounting", "Which statement shows a company's financial position at a single point in time?", ["Income statement", "Balance sheet", "Cash flow statement", "Statement of changes in equity"], 1, "The balance sheet is a snapshot at the reporting date; the other statements cover a period."),
+        mcq("acc-l1-c1", "accounting", "Which statement shows a company's financial position at a single point in time?", ["Balance sheet", "Income statement", "Cash flow statement", "Statement of changes in equity"], 0, "The balance sheet is a snapshot at the reporting date; the other statements cover a period."),
         mcq("acc-l1-c2", "accounting", "Where does a dividend payment appear?", ["Income statement as an expense", "Cash flow from operations", "Cash flow from financing and a reduction in retained earnings", "Cash flow from investing"], 2, "Dividends are a distribution to owners, not an expense. They reduce cash (financing section) and retained earnings."),
-        mcq("acc-l1-c3", "accounting", "Why is EBITDA not the same as free cash flow?", ["It includes interest", "It ignores capital expenditure, working capital and taxes", "It is calculated after depreciation", "It only applies to banks"], 1, "EBITDA is before capex, changes in working capital and taxes, all of which consume real cash."),
+        mcq("acc-l1-c3", "accounting", "Why is EBITDA not the same as free cash flow?", ["It includes interest", "It is calculated after depreciation", "It only applies to banks", "It ignores capital expenditure, working capital and taxes"], 3, "EBITDA is before capex, changes in working capital and taxes, all of which consume real cash."),
       ],
     },
     {
@@ -117,7 +117,7 @@ export const accountingFundamentals: Course = {
       check: [
         num("acc-l2-c1", "accounting", "Depreciation increases by $20 and the tax rate is 30%. By how much does the company's cash change? (in $; use a minus sign for a decrease)", 6, 0.01, "$", "Net income falls by 20 × (1 − 30%) = $14. Adding back $20 of non-cash depreciation gives +$6 of cash: the tax shield, 20 × 30%."),
         mcq("acc-l2-c2", "accounting", "A company buys $40 of inventory on credit (accounts payable). What happens to the balance sheet?", ["Cash −$40, inventory +$40", "Inventory +$40, accounts payable +$40", "Inventory +$40, retained earnings +$40", "No change until the inventory is sold"], 1, "An asset (inventory) and a liability (payables) both rise by $40. No cash moves and nothing hits the income statement yet."),
-        mcq("acc-l2-c3", "accounting", "Net income connects to the balance sheet through which line?", ["Cash", "Retained earnings", "Accounts receivable", "Common stock"], 1, "Net income, less dividends, is added to retained earnings within shareholders' equity."),
+        mcq("acc-l2-c3", "accounting", "Net income connects to the balance sheet through which line?", ["Cash", "Accounts receivable", "Common stock", "Retained earnings"], 3, "Net income, less dividends, is added to retained earnings within shareholders' equity."),
       ],
     },
     {
@@ -200,7 +200,7 @@ export const accountingFundamentals: Course = {
       ],
       check: [
         num("acc-l4-c1", "accounting", "A customer pays $240 upfront for a 12-month service starting 1 January. How much deferred revenue remains after 4 months? (in $)", 160, 0.01, "$", "Revenue recognised is $20 a month × 4 = $80, so deferred revenue is $240 − $80 = $160."),
-        mcq("acc-l4-c2", "accounting", "Stock-based compensation of $50 is recorded. How is it treated in the cash flow statement?", ["Subtracted in investing", "Added back in operating cash flow", "Recorded in financing as a share issue for cash", "Ignored"], 1, "SBC is a non-cash expense, so it is added back to net income in cash from operations."),
+        mcq("acc-l4-c2", "accounting", "Stock-based compensation of $50 is recorded. How is it treated in the cash flow statement?", ["Added back in operating cash flow", "Subtracted in investing", "Recorded in financing as a share issue for cash", "Ignored"], 0, "SBC is a non-cash expense, so it is added back to net income in cash from operations."),
         mcq("acc-l4-c3", "accounting", "Which item is a liability?", ["Prepaid insurance", "Accounts receivable", "Deferred revenue", "Inventory"], 2, "Deferred revenue is an obligation to deliver goods or services that the customer has already paid for."),
       ],
     },
@@ -209,8 +209,8 @@ export const accountingFundamentals: Course = {
     num("acc-a1", "accounting", "Depreciation falls by $30 and the tax rate is 20%. What is the change in cash? (in $; use a minus sign for a decrease)", -6, 0.01, "$", "Lower depreciation raises pre-tax income by $30 and taxes by $6. Net income +$24, minus the $30 smaller add-back, gives cash −$6."),
     mcq("acc-a2", "accounting", "A company repays $200 of debt with cash. Which statements change?", ["Income statement and balance sheet", "Cash flow statement (financing) and balance sheet", "All three statements", "Only the balance sheet"], 1, "Repaying principal is not an expense. CFF falls by $200; cash and debt each fall by $200."),
     num("acc-a3", "accounting", "Revenue is $730m and receivables are $80m. What is DSO? (in days)", 40, 0.1, "days", "DSO = 80 / 730 × 365 = 40 days."),
-    mcq("acc-a4", "accounting", "An increase in accounts payable is:", ["A use of cash", "A source of cash", "An expense", "Revenue"], 1, "Delaying payment to suppliers keeps cash in the business, so an increase in payables is a source of cash in CFO."),
-    mcq("acc-a5", "accounting", "Which is the best description of retained earnings?", ["Cash the company holds", "Cumulative net income less dividends paid", "The market value of equity", "Profit for the current year"], 1, "Retained earnings accumulate net income not distributed as dividends. They are not a pile of cash."),
+    mcq("acc-a4", "accounting", "An increase in accounts payable is:", ["A use of cash", "An expense", "Revenue", "A source of cash"], 3, "Delaying payment to suppliers keeps cash in the business, so an increase in payables is a source of cash in CFO."),
+    mcq("acc-a5", "accounting", "Which is the best description of retained earnings?", ["Cumulative net income less dividends paid", "Cash the company holds", "The market value of equity", "Profit for the current year"], 0, "Retained earnings accumulate net income not distributed as dividends. They are not a pile of cash."),
     mcq("acc-a6", "accounting", "Inventory worth $100 is written down to $60 (25% tax rate). What is the change in net income?", ["−$40", "−$30", "−$10", "No change"], 1, "The $40 write-down is an expense; after the 25% tax shield net income falls by $30."),
   ],
 };

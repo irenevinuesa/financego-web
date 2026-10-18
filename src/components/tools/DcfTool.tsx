@@ -133,7 +133,7 @@ export function DcfTool() {
               <NumberField label="Diluted shares" value={v.shares} onChange={set("shares")} unit="m" error={errors.shares} hint="Optional, for value per share" />
             </div>
             <label className="flex items-center gap-3 text-sm text-ink">
-              <input type="checkbox" checked={v.midYear} onChange={(e) => setV((p) => ({ ...p, midYear: e.target.checked }))} className="h-4 w-4 accent-[#1d70b0]" />
+              <input type="checkbox" checked={v.midYear} onChange={(e) => setV((p) => ({ ...p, midYear: e.target.checked }))} className="h-4 w-4 accent-[#114779]" />
               Mid-year discounting convention
             </label>
           </div>
@@ -214,7 +214,7 @@ export function DcfTool() {
                         <XAxis dataKey="year" {...axisProps} />
                         <YAxis {...axisProps} width={52} tickFormatter={(x) => fmtMoney(x)} />
                         <Tooltip
-                          cursor={{ fill: "rgba(29,112,176,0.06)" }}
+                          cursor={{ fill: "rgba(17,71,121,0.06)" }}
                           content={({ active, payload }) => {
                             if (!active || !payload?.length) return null;
                             const d = payload[0].payload as (typeof chartData)[number];

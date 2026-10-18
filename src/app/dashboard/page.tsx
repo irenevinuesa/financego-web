@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/PageHeader";
 import { Dashboard } from "@/components/dashboard/Dashboard";
 
-export const metadata: Metadata = { title: "Dashboard", description: "Your FinanceGo dashboard: continue learning, practice recommendations, interviews, applications and goals." };
+export const metadata: Metadata = { title: "Dashboard", description: "Your FinanceGo dashboard: continue learning, practice recommendations, the 500 Challenge, interviews and your story bank." };
 
 export default function DashboardPage() {
   return (

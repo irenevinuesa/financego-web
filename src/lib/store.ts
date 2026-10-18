@@ -26,7 +26,7 @@ export interface AssessmentResult {
   passed: boolean;
 }
 
-export type AttemptSource = "practice" | "lesson" | "assessment" | "qotd";
+export type AttemptSource = "practice" | "lesson" | "assessment" | "qotd" | "challenge";
 export type AttemptResult = "correct" | "incorrect" | "self";
 
 export interface Attempt {
@@ -119,6 +119,37 @@ export interface Goal {
   createdAt: string;
 }
 
+/* ───────────── 500 Challenge & story bank ───────────── */
+
+export interface ChallengeAnswer {
+  result: AttemptResult;
+  selfScore?: number;
+  at: string;
+}
+
+export interface ChallengeState {
+  /** First answer to each challenge question, keyed by question id. */
+  answers: Record<string, ChallengeAnswer>;
+  /** Latest retry of a missed question; a correct retry clears it from the Missed list. */
+  retries: Record<string, ChallengeAnswer>;
+  /** Optional recruiting date (YYYY-MM-DD) used to compute the daily pace. */
+  targetDate: string;
+}
+
+export interface Story {
+  id: string;
+  title: string;
+  situation: string;
+  task: string;
+  action: string;
+  result: string;
+  learning: string;
+  /** Behavioural question categories this story can answer. */
+  categories: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface Profile {
   name: string;
   track: TrackId | "";
@@ -139,6 +170,8 @@ export interface StoreState {
   /** Seconds of active study per local date (YYYY-MM-DD). */
   study: Record<string, number>;
   lastLesson?: { courseId: string; lessonId: string; at: string };
+  challenge: ChallengeState;
+  stories: Story[];
 }
 
 export function emptyState(): StoreState {
@@ -154,6 +187,8 @@ export function emptyState(): StoreState {
     goals: [],
     checklists: {},
     study: {},
+    challenge: { answers: {}, retries: {}, targetDate: "" },
+    stories: [],
   };
 }
 
@@ -187,6 +222,7 @@ export function sanitizeState(raw: unknown): StoreState {
   const base = emptyState();
   if (!isRecord(raw) || raw.version !== 1) return base;
   const profile = isRecord(raw.profile) ? raw.profile : {};
+  const challenge = isRecord(raw.challenge) ? raw.challenge : {};
   return {
     version: 1,
     createdAt: typeof raw.createdAt === "string" ? raw.createdAt : "",
@@ -204,6 +240,12 @@ export function sanitizeState(raw: unknown): StoreState {
     checklists: isRecord(raw.checklists) ? (raw.checklists as StoreState["checklists"]) : {},
     study: isRecord(raw.study) ? (raw.study as StoreState["study"]) : {},
     lastLesson: isRecord(raw.lastLesson) ? (raw.lastLesson as StoreState["lastLesson"]) : undefined,
+    challenge: {
+      answers: isRecord(challenge.answers) ? (challenge.answers as ChallengeState["answers"]) : {},
+      retries: isRecord(challenge.retries) ? (challenge.retries as ChallengeState["retries"]) : {},
+      targetDate: typeof challenge.targetDate === "string" ? challenge.targetDate : "",
+    },
+    stories: Array.isArray(raw.stories) ? (raw.stories as Story[]) : [],
   };
 }
 
@@ -397,6 +439,41 @@ export const actions = {
 
   setProfile(profile: Partial<Profile>) {
     update((s) => ({ ...s, profile: { ...s.profile, ...profile } }));
+  },
+
+  /** Records the first answer to a challenge question (later answers are retries). */
+  answerChallenge(qid: string, outcome: { result: AttemptResult; selfScore?: number }) {
+    const at = new Date().toISOString();
+    update((s) => {
+      if (s.challenge.answers[qid]) return s;
+      return { ...s, challenge: { ...s.challenge, answers: { ...s.challenge.answers, [qid]: { ...outcome, at } } } };
+    });
+  },
+
+  retryChallenge(qid: string, outcome: { result: AttemptResult; selfScore?: number }) {
+    const at = new Date().toISOString();
+    update((s) => ({ ...s, challenge: { ...s.challenge, retries: { ...s.challenge.retries, [qid]: { ...outcome, at } } } }));
+  },
+
+  setChallengeTarget(date: string) {
+    update((s) => ({ ...s, challenge: { ...s.challenge, targetDate: date } }));
+  },
+
+  resetChallenge() {
+    update((s) => ({ ...s, challenge: { answers: {}, retries: {}, targetDate: s.challenge.targetDate } }));
+  },
+
+  upsertStory(story: Omit<Story, "createdAt" | "updatedAt"> & { createdAt?: string }) {
+    const now = new Date().toISOString();
+    update((s) => {
+      const exists = s.stories.some((x) => x.id === story.id);
+      const record: Story = { ...story, createdAt: story.createdAt ?? now, updatedAt: now };
+      return { ...s, stories: exists ? s.stories.map((x) => (x.id === story.id ? { ...record, createdAt: x.createdAt } : x)) : [...s.stories, record] };
+    });
+  },
+
+  deleteStory(id: string) {
+    update((s) => ({ ...s, stories: s.stories.filter((x) => x.id !== id) }));
   },
 
   importState(raw: unknown): boolean {

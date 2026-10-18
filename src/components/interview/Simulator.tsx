@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, BookOpen, Check, CircleCheck, CircleX, Clock, Flag, Info, MessagesSquare, Play, RotateCcw, Send, SkipForward, Target } from "lucide-react";
-import { INTERVIEW_ITEMS } from "@/content/interview/items";
+import { itemsForScope, type InterviewScope } from "@/content/interview";
 import { getCourse, lessonHref } from "@/content/courses";
 import { DIFFICULTIES, INTERVIEW_TRACK_IDS, TOPICS, TRACKS } from "@/content/taxonomy";
 import type { Difficulty, InterviewItem, Lang, TopicId, TrackId } from "@/content/types";
@@ -65,7 +65,7 @@ const TOPIC_CHOICES: TopicId[] = ["accounting", "valuation", "corporate-finance"
 
 /* ───────────── Setup ───────────── */
 
-function Setup({ onStart }: { onStart: (c: InterviewConfig) => void }) {
+function Setup({ onStart, scope }: { onStart: (c: InterviewConfig) => void; scope: InterviewScope }) {
   const params = useSearchParams();
   const state = useStore();
   const hydrated = useHydrated();
@@ -88,7 +88,7 @@ function Setup({ onStart }: { onStart: (c: InterviewConfig) => void }) {
     if (!presetTrack && state.profile.track && INTERVIEW_TRACK_IDS.includes(state.profile.track as TrackId)) setTrack(state.profile.track as TrackId);
   }, [hydrated, state.profile, presetTrack]);
 
-  const available = useMemo(() => INTERVIEW_ITEMS.filter((i) => i.tracks === "all" || i.tracks.includes(track)).length, [track]);
+  const available = useMemo(() => itemsForScope(scope).filter((i) => i.tracks === "all" || i.tracks.includes(track)).length, [track, scope]);
 
   return (
     <Card className="p-5 sm:p-8">
@@ -115,6 +115,7 @@ function Setup({ onStart }: { onStart: (c: InterviewConfig) => void }) {
             ))}
           </Select>
         </div>
+        {scope === "technical" && (
         <div className="md:col-span-2">
           <Label>Interview type</Label>
           <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-5">
@@ -132,6 +133,8 @@ function Setup({ onStart }: { onStart: (c: InterviewConfig) => void }) {
             ))}
           </div>
         </div>
+        )}
+        {scope === "technical" && (
         <div>
           <Label>Difficulty</Label>
           <div className="flex flex-wrap gap-2">
@@ -142,6 +145,7 @@ function Setup({ onStart }: { onStart: (c: InterviewConfig) => void }) {
             ))}
           </div>
         </div>
+        )}
         <div>
           <Label>Language</Label>
           <div className="flex flex-wrap gap-2">
@@ -153,6 +157,7 @@ function Setup({ onStart }: { onStart: (c: InterviewConfig) => void }) {
             </Chip>
           </div>
         </div>
+        {scope === "technical" && (
         <div className="md:col-span-2">
           <Label hint="Optional. Leave empty for a balanced mix">Technical topics</Label>
           <div className="flex flex-wrap gap-2">
@@ -163,16 +168,22 @@ function Setup({ onStart }: { onStart: (c: InterviewConfig) => void }) {
             ))}
           </div>
         </div>
+        )}
         <label className="flex items-center gap-3 text-sm text-ink md:col-span-2">
-          <input type="checkbox" checked={timer} onChange={(e) => setTimer(e.target.checked)} className="h-4 w-4 accent-[#1d70b0]" />
+          <input type="checkbox" checked={timer} onChange={(e) => setTimer(e.target.checked)} className="h-4 w-4 accent-[#114779]" />
           Show a timer (about two minutes per answer is a good target)
         </label>
       </div>
       <div className="mt-8 flex flex-wrap items-center gap-4">
-        <Button size="lg" onClick={() => onStart({ track, difficulty, length, type, topics, lang, timer })}>
+        <Button
+          size="lg"
+          onClick={() =>
+            onStart({ scope, track, difficulty, length, type: scope === "behavioural" ? "behavioral" : type, topics: scope === "behavioural" ? [] : topics, lang, timer })
+          }
+        >
           <Play className="h-4 w-4" /> Start interview
         </Button>
-        <p className="text-xs text-ink-muted">Answers stay in this browser. Only the scores and topics are saved to your Tracker, not your written answers.</p>
+        <p className="text-xs text-ink-muted">Answers stay in this browser. Only the scores and topics are saved to your dashboard, not your written answers.</p>
       </div>
     </Card>
   );
@@ -362,10 +373,21 @@ function Room({ config, items, relaxed, onFinish }: { config: InterviewConfig; i
         <Card className="p-4 text-sm">
           <p className="font-semibold text-navy">How to answer well</p>
           <ul className="mt-2 space-y-1.5 text-ink-muted">
-            <li>Give the answer first, then explain why.</li>
-            <li>Use structure: “First… Second…”.</li>
-            <li>Show numbers when you calculate.</li>
-            <li>It is fine to say what you would check.</li>
+            {config.scope === "behavioural" ? (
+              <>
+                <li>Use STAR: Situation, Task, Action, Result.</li>
+                <li>Spend most of your time on what you did.</li>
+                <li>Give a concrete result, with a number if you have one.</li>
+                <li>End with what you learned.</li>
+              </>
+            ) : (
+              <>
+                <li>Give the answer first, then explain why.</li>
+                <li>Use structure: “First… Second…”.</li>
+                <li>Show numbers when you calculate.</li>
+                <li>It is fine to say what you would check.</li>
+              </>
+            )}
           </ul>
         </Card>
         <Card className="p-4 text-xs text-ink-muted">
@@ -444,7 +466,11 @@ function Report({ config, items, turns, seconds, onRestart }: { config: Intervie
           answer length and structure words), not from an expert reviewer. They are not a prediction of any hiring outcome.
         </p>
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <ScoreBar label="Technical accuracy" value={s.technical} rule="Share of the expected key concepts your answers covered (numeric answers: within tolerance)." />
+          <ScoreBar
+            label={config.scope === "behavioural" ? "Content coverage" : "Technical accuracy"}
+            value={s.technical}
+            rule={config.scope === "behavioural" ? "Share of the elements a strong answer contains (STAR structure, ownership, specifics) that your answers covered." : "Share of the expected key concepts your answers covered (numeric answers: within tolerance)."}
+          />
           <ScoreBar label="Structure of reasoning" value={s.answered ? s.structure : null} rule="Do answers give reasons (because, therefore…) and an ordered structure?" />
           <ScoreBar label="Numerical precision" value={s.numerical} rule="Numeric questions answered within tolerance. n/a if none were asked." />
           <ScoreBar label="Clarity of communication" value={s.answered ? s.clarity : null} rule="Answer length in a sensible range, sentences not too long, few hedges." />
@@ -453,7 +479,7 @@ function Report({ config, items, turns, seconds, onRestart }: { config: Intervie
           <Button onClick={onRestart}>
             <RotateCcw className="h-4 w-4" /> New interview
           </Button>
-          <ButtonLink href="/tracker/#interviews" variant="secondary">
+          <ButtonLink href="/dashboard/" variant="secondary">
             Interview history
           </ButtonLink>
         </div>
@@ -496,6 +522,25 @@ function Report({ config, items, turns, seconds, onRestart }: { config: Intervie
           <p className="flex items-center gap-2 font-semibold text-navy">
             <MessagesSquare className="h-4 w-4 text-electric" /> Recommended practice
           </p>
+          {config.scope === "behavioural" ? (
+            <ul className="mt-2 space-y-1.5 text-sm">
+              <li>
+                <Link href="/behaviourals/questions/" className="text-electric hover:underline">
+                  Behavioural question library
+                </Link>
+              </li>
+              <li>
+                <Link href="/behaviourals/stories/" className="text-electric hover:underline">
+                  Build your story bank
+                </Link>
+              </li>
+              <li>
+                <Link href="/behaviourals/" className="text-electric hover:underline">
+                  The STAR method guide
+                </Link>
+              </li>
+            </ul>
+          ) : (
           <ul className="mt-2 space-y-1.5 text-sm">
             {(practiceTopics.length ? practiceTopics : (["valuation"] as TopicId[])).map((tp) => (
               <li key={tp}>
@@ -510,6 +555,7 @@ function Report({ config, items, turns, seconds, onRestart }: { config: Intervie
               </Link>
             </li>
           </ul>
+          )}
         </Card>
       </div>
 
@@ -572,16 +618,17 @@ function Report({ config, items, turns, seconds, onRestart }: { config: Intervie
 
 /* ───────────── History ───────────── */
 
-export function InterviewHistory() {
+export function InterviewHistory({ scope }: { scope: InterviewScope }) {
   const state = useStore();
   const hydrated = useHydrated();
-  if (!hydrated || state.interviews.length === 0) return null;
-  const recent = [...state.interviews].reverse().slice(0, 5);
+  const mine = state.interviews.filter((r) => (scope === "behavioural" ? r.format === "behavioral" : r.format !== "behavioral"));
+  if (!hydrated || mine.length === 0) return null;
+  const recent = [...mine].reverse().slice(0, 5);
   return (
     <Card className="p-5">
       <div className="flex items-center justify-between gap-2">
         <p className="font-semibold text-navy">Recent mock interviews</p>
-        <Link href="/tracker/#interviews" className="text-sm text-electric hover:underline">
+        <Link href="/dashboard/" className="text-sm text-electric hover:underline">
           All history
         </Link>
       </div>
@@ -592,7 +639,7 @@ export function InterviewHistory() {
               {TRACKS[r.track]?.label ?? r.track} · {r.format} · {r.answered} answers
             </span>
             <span className="text-ink-muted">
-              Technical {Math.round(r.scores.technical * 100)}% · {fmtRelative(r.at)}
+              {scope === "behavioural" ? "Content" : "Technical"} {Math.round(r.scores.technical * 100)}% · {fmtRelative(r.at)}
             </span>
           </li>
         ))}
@@ -603,7 +650,7 @@ export function InterviewHistory() {
 
 /* ───────────── Orchestrator ───────────── */
 
-export function Simulator() {
+export function Simulator({ scope = "technical" }: { scope?: InterviewScope }) {
   const [phase, setPhase] = useState<"setup" | "room" | "report">("setup");
   const [config, setConfig] = useState<InterviewConfig | null>(null);
   const [items, setItems] = useState<InterviewItem[]>([]);
@@ -632,6 +679,7 @@ export function Simulator() {
   return (
     <div className="space-y-6">
       <Setup
+        scope={scope}
         onStart={(c) => {
           const sel = selectItems(c);
           setConfig(c);
@@ -641,12 +689,18 @@ export function Simulator() {
           setPhase("room");
         }}
       />
-      <InterviewHistory />
+      <InterviewHistory scope={scope} />
       <p className="flex items-center gap-2 text-sm text-ink-muted">
-        <ArrowRight className="h-4 w-4" /> Want to warm up first? Try the{" "}
-        <Link href="/practice/session/?mode=interview" className="text-electric hover:underline">
-          Interview Preparation practice set
-        </Link>
+        <ArrowRight className="h-4 w-4" /> Want to warm up first?{" "}
+        {scope === "behavioural" ? (
+          <Link href="/behaviourals/stories/" className="text-electric hover:underline">
+            Prepare your stories in the story bank
+          </Link>
+        ) : (
+          <Link href="/practice/session/?mode=interview" className="text-electric hover:underline">
+            Try the Interview Preparation practice set
+          </Link>
+        )}
         .
       </p>
     </div>

@@ -22,7 +22,7 @@ export default function LearnPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Learn"
+        eyebrow="Technicals · Learn"
         title="Learn finance by doing it"
         description={
           <p>
@@ -31,7 +31,7 @@ export default function LearnPage() {
           </p>
         }
         scene="trail"
-        crumbs={[{ href: "/", label: "Home" }, { label: "Learn" }]}
+        crumbs={[{ href: "/", label: "Home" }, { href: "/technicals/", label: "Technicals" }, { label: "Learn" }]}
       />
 
       <section className="container-page pt-12">

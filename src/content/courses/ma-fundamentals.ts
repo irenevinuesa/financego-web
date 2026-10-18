@@ -134,8 +134,8 @@ export const maFundamentals: Course = {
         "Forgetting that signing and closing are separate steps with conditions in between.",
       ],
       check: [
-        mcq("maf-l2-c1", "ma", "Which order is correct for a sell-side process?", ["CIM → teaser → NDA → binding offers", "Teaser → NDA → CIM → indicative offers → due diligence → binding offers", "NDA → binding offers → CIM → data room", "Indicative offers → teaser → SPA → NDA"], 1, "Buyers see an anonymous teaser, sign an NDA, then receive the CIM. Indicative offers narrow the field before due diligence and binding offers."),
-        mcq("maf-l2-c2", "ma", "When would a seller choose a negotiated sale with one buyer over an auction?", ["When it wants the most competitive tension", "When there is one obvious buyer and confidentiality or speed matters most", "When the business is very large", "Never: auctions are required by law"], 1, "A negotiated sale gives up competition in exchange for confidentiality, speed and less disruption to the business."),
+        mcq("maf-l2-c1", "ma", "Which order is correct for a sell-side process?", ["CIM → teaser → NDA → binding offers", "NDA → binding offers → CIM → data room", "Indicative offers → teaser → SPA → NDA", "Teaser → NDA → CIM → indicative offers → due diligence → binding offers"], 3, "Buyers see an anonymous teaser, sign an NDA, then receive the CIM. Indicative offers narrow the field before due diligence and binding offers."),
+        mcq("maf-l2-c2", "ma", "When would a seller choose a negotiated sale with one buyer over an auction?", ["When there is one obvious buyer and confidentiality or speed matters most", "When it wants the most competitive tension", "When the business is very large", "Never: auctions are required by law"], 0, "A negotiated sale gives up competition in exchange for confidentiality, speed and less disruption to the business."),
         mcq("maf-l2-c3", "ma", "What is the main purpose of the CIM?", ["To bind the buyer to a price", "To describe the business in detail so buyers can make an informed indicative offer", "To obtain regulatory approval", "To announce the deal to the market"], 1, "The confidential information memorandum gives potential buyers the detail they need to value the business and bid in the first round."),
       ],
     },
@@ -183,7 +183,7 @@ export const maFundamentals: Course = {
       check: [
         num("maf-l3-c1", "ma", "A target's unaffected share price is $25. The acquirer offers $32 per share. What is the offer premium? (in %)", 28, 0.05, "%", "Premium = 32 / 25 − 1 = 28%.", { formula: String.raw`P_{\text{offer}} / P_{\text{unaffected}} - 1` }),
         num("maf-l3-c2", "ma", "Run-rate pre-tax cost synergies are $40m a year. The tax rate is 25% and the discount rate 10%. Treating them as a level perpetuity and ignoring costs, what are they worth? (in $m)", 300, 0.5, "$m", "After-tax synergies = 40 × 0.75 = $30m a year. Value = 30 / 0.10 = $300m."),
-        mcq("maf-l3-c3", "ma", "Why are precedent transaction multiples usually higher than trading comparables in the same sector?", ["Precedents use LTM figures", "Acquirers pay a control premium, often justified by synergies", "Trading comps exclude debt", "Precedents are always more recent"], 1, "Trading prices reflect minority stakes. Acquirers pay extra for control and expected synergies."),
+        mcq("maf-l3-c3", "ma", "Why are precedent transaction multiples usually higher than trading comparables in the same sector?", ["Precedents use LTM figures", "Trading comps exclude debt", "Acquirers pay a control premium, often justified by synergies", "Precedents are always more recent"], 2, "Trading prices reflect minority stakes. Acquirers pay extra for control and expected synergies."),
       ],
     },
     {
@@ -233,7 +233,7 @@ export const maFundamentals: Course = {
       check: [
         num("maf-l4-c1", "ma", "An acquirer offers $45 per target share, paid in its own stock. The acquirer's shares trade at $90. What is the exchange ratio? (acquirer shares per target share)", 0.5, 0.001, "", "Exchange ratio = 45 / 90 = 0.5 acquirer shares for each target share."),
         num("maf-l4-c2", "ma", "An acquirer with 300m shares issues 100m new shares to the target's shareholders. What percentage of the combined company do the target's former shareholders own? (in %)", 25, 0.05, "%", "100 / (300 + 100) = 25%."),
-        mcq("maf-l4-c3", "ma", "In an all-cash acquisition, who bears the risk that synergies are not achieved?", ["The target's former shareholders", "The acquirer's shareholders", "The two groups equally", "The bankers"], 1, "The target's shareholders have been paid in cash and walk away. Any shortfall falls entirely on the acquirer's shareholders."),
+        mcq("maf-l4-c3", "ma", "In an all-cash acquisition, who bears the risk that synergies are not achieved?", ["The target's former shareholders", "The two groups equally", "The bankers", "The acquirer's shareholders"], 3, "The target's shareholders have been paid in cash and walk away. Any shortfall falls entirely on the acquirer's shareholders."),
       ],
     },
     {
@@ -281,7 +281,7 @@ export const maFundamentals: Course = {
       check: [
         num("maf-l5-c1", "ma", "Acquirer: net income $300m, 60m shares at $75 (EPS $5.00). It buys a target with net income $50m for $900m, paid entirely in new acquirer shares. Ignoring synergies and fees, what is the accretion (+) or dilution (−)? (in %, one decimal)", -2.8, 0.1, "%", "New shares = 900 / 75 = 12m. Pro forma EPS = (300 + 50) / 72 = $4.861. 4.861 / 5.00 − 1 = −2.8%: dilutive, as the P/E rule predicts (the acquirer trades at 15x and pays 18x)."),
         num("maf-l5-c2", "ma", "Same deal, but funded entirely with new debt at 5% pre-tax and a 25% tax rate. What is pro forma EPS? (in $, two decimals)", 5.27, 0.01, "$", "After-tax interest = 900 × 5% × 0.75 = $33.75m. Pro forma EPS = (300 + 50 − 33.75) / 60 = $5.27, about 5.4% accretive."),
-        mcq("maf-l5-c3", "ma", "An acquirer trading at 12x earnings buys a target for 16x earnings, all in stock. Ignoring synergies, the deal is:", ["Accretive", "Dilutive", "Neutral", "Impossible to tell"], 1, "The acquirer's stock costs it an earnings yield of 1/12 = 8.3%, but it buys earnings at a yield of only 1/16 = 6.25%. It pays with a more expensive currency than the earnings it gets, so EPS falls."),
+        mcq("maf-l5-c3", "ma", "An acquirer trading at 12x earnings buys a target for 16x earnings, all in stock. Ignoring synergies, the deal is:", ["Dilutive", "Accretive", "Neutral", "Impossible to tell"], 0, "The acquirer's stock costs it an earnings yield of 1/12 = 8.3%, but it buys earnings at a yield of only 1/16 = 6.25%. It pays with a more expensive currency than the earnings it gets, so EPS falls."),
       ],
     },
   ],
@@ -292,7 +292,7 @@ export const maFundamentals: Course = {
     num("maf-a4", "ma", "An acquirer offers $36 per target share in stock. Its own shares trade at $48. What is the exchange ratio? (acquirer shares per target share)", 0.75, 0.001, "", "36 / 48 = 0.75."),
     num("maf-a5", "ma", "Acquirer: net income $400m, 100m shares at $60 (EPS $4.00). It buys a target with net income $60m for $1,200m, all in new shares. Ignoring synergies, what is the accretion (+) or dilution (−)? (in %, one decimal)", -4.2, 0.1, "%", "New shares = 1,200 / 60 = 20m. Pro forma EPS = 460 / 120 = $3.833. 3.833 / 4.00 − 1 = −4.2%."),
     num("maf-a6", "ma", "For the deal in the previous question, with a 25% tax rate, what pre-tax synergies would make it EPS-neutral? (in $m, one decimal)", 26.7, 0.1, "$m", "Neutral needs EPS $4.00 on 120m shares: net income $480m, $20m more than $460m. Pre-tax: 20 / 0.75 = $26.7m."),
-    mcq("maf-a7", "ma", "Cash on hand earns 2% pre-tax, new debt costs 7% pre-tax, the tax rate is 25% and the acquirer trades at 10x earnings. Ignoring other effects, which currency makes a deal most accretive?", ["New stock", "New debt", "Cash on hand", "They are all the same"], 2, "After tax (25%), cash costs 1.5%, debt 5.25% and stock 10% (1 ÷ 10x). The cheapest currency gives the most accretion."),
+    mcq("maf-a7", "ma", "Cash on hand earns 2% pre-tax, new debt costs 7% pre-tax, the tax rate is 25% and the acquirer trades at 10x earnings. Ignoring other effects, which currency makes a deal most accretive?", ["Cash on hand", "New stock", "New debt", "They are all the same"], 0, "After tax (25%), cash costs 1.5%, debt 5.25% and stock 10% (1 ÷ 10x). The cheapest currency gives the most accretion."),
     mcq("maf-a8", "ma", "A deal funded with cheap debt is 8% EPS-accretive, but the price is well above the target's standalone value plus synergies. What is the best description?", ["A good deal, because EPS rises", "Accretive but value-destroying: the acquirer is overpaying", "Neutral, because accretion offsets overpayment", "Impossible: accretive deals always create value"], 1, "Accretion only shows that the after-tax cost of the debt is below the target's earnings yield. Value is destroyed whenever the price exceeds standalone value plus synergies."),
   ],
 };

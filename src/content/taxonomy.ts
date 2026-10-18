@@ -5,7 +5,7 @@ export const TOPICS: Record<TopicId, { label: string; skill: SkillId | null }> =
   "corporate-finance": { label: "Corporate Finance", skill: "valuation" },
   valuation: { label: "Valuation", skill: "valuation" },
   ma: { label: "M&A", skill: "ma" },
-  lbo: { label: "LBO", skill: "lbo" },
+  lbo: { label: "Private Equity & LBO", skill: "lbo" },
   markets: { label: "Financial Markets", skill: "macro" },
   "fixed-income": { label: "Fixed Income", skill: "fixed-income" },
   derivatives: { label: "Derivatives", skill: "derivatives" },
@@ -13,7 +13,10 @@ export const TOPICS: Record<TopicId, { label: string; skill: SkillId | null }> =
   "credit-risk": { label: "Credit & Risk", skill: "fixed-income" },
   quant: { label: "Quantitative Finance", skill: "quant" },
   "brain-teasers": { label: "Brain Teasers", skill: "quant" },
-  strategy: { label: "Business & Strategy Cases", skill: null },
+  strategy: { label: "Consulting & Business Cases", skill: null },
+  "capital-markets": { label: "Capital Markets", skill: "fixed-income" },
+  industries: { label: "Industries", skill: "valuation" },
+  restructuring: { label: "Restructuring", skill: "fixed-income" },
 };
 
 export const TOPIC_IDS = Object.keys(TOPICS) as TopicId[];

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { INTERVIEW_ITEMS } from "@/content/interview/items";
+import { ALL_INTERVIEW_ITEMS } from "@/content/interview";
 import { evaluateAnswer, extractNumbers, getItem, normalize, selectItems, summarize } from "./interview";
 
 describe("text helpers", () => {
@@ -57,23 +57,34 @@ describe("answer evaluation", () => {
 
 describe("session selection", () => {
   it("returns the requested number of items", () => {
-    const { items } = selectItems({ track: "investment-banking", difficulty: "Intermediate", length: 5, type: "technical", topics: [], lang: "en", timer: false });
+    const { items } = selectItems({ scope: "technical", track: "investment-banking", difficulty: "Intermediate", length: 5, type: "technical", topics: [], lang: "en", timer: false });
     expect(items).toHaveLength(5);
     expect(new Set(items.map((i) => i.id)).size).toBe(5);
   });
 
   it("relaxes filters and reports it when too few items match", () => {
-    const { items, relaxed } = selectItems({ track: "consulting", difficulty: "Advanced", length: 8, type: "pitch", topics: ["derivatives"], lang: "en", timer: false });
+    const { items, relaxed } = selectItems({ scope: "technical", track: "consulting", difficulty: "Advanced", length: 8, type: "pitch", topics: ["derivatives"], lang: "en", timer: false });
     expect(items).toHaveLength(8);
     expect(relaxed.length).toBeGreaterThan(0);
   });
 
-  it("puts a single behavioural question first in mixed interviews", () => {
-    for (let s = 0; s < 10; s++) {
-      const { items } = selectItems({ track: "private-equity", difficulty: "Beginner", length: 8, type: "mixed", topics: [], lang: "en", timer: false });
-      const behavioural = items.filter((i) => i.format === "behavioral");
-      expect(behavioural.length).toBeLessThanOrEqual(1);
-      if (behavioural.length) expect(items[0].format).toBe("behavioral");
+  it("keeps technical and behavioural interviews separate", () => {
+    const tech = selectItems({ scope: "technical", track: "private-equity", difficulty: "Beginner", length: 8, type: "mixed", topics: [], lang: "en", timer: false });
+    expect(tech.items.every((i) => i.format !== "behavioral")).toBe(true);
+    const beh = selectItems({ scope: "behavioural", track: "investment-banking", difficulty: "Beginner", length: 8, type: "behavioral", topics: [], lang: "es", timer: false });
+    expect(beh.items).toHaveLength(8);
+    expect(beh.items.every((i) => i.format === "behavioral")).toBe(true);
+  });
+
+  it("opens behavioural interviews with your story and closes with your questions", () => {
+    for (let seed = 0; seed < 20; seed++) {
+      let x = seed + 1;
+      const random = () => ((x = (x * 9301 + 49297) % 233280) / 233280);
+      const { items } = selectItems({ scope: "behavioural", track: "private-equity", difficulty: "Intermediate", length: 5, type: "behavioral", topics: [], lang: "en", timer: false }, random);
+      expect(items).toHaveLength(5);
+      expect(items[0].id).toBe("iv-b-yourself");
+      expect(items[4].id).toBe("iv-b-questions");
+      expect(new Set(items.map((i) => i.id)).size).toBe(5);
     }
   });
 
@@ -89,7 +100,7 @@ describe("session selection", () => {
 describe("interview content", () => {
   it("has unique ids, valid patterns and both languages", () => {
     const ids = new Set<string>();
-    for (const item of INTERVIEW_ITEMS) {
+    for (const item of ALL_INTERVIEW_ITEMS) {
       expect(ids.has(item.id)).toBe(false);
       ids.add(item.id);
       for (const text of [item.prompt, item.modelAnswer, item.followUp.deeper, item.followUp.probe, item.followUpModelAnswer]) {
