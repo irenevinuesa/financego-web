@@ -4,7 +4,7 @@
 
 FinanceGo is an interactive finance education and interview-preparation website for university students and young analysts, in **English and Spanish**. It is a fully static site: no accounts, no server and no paid services. Learner data is stored in the browser, and market headlines are refreshed every morning at 9:00 (Madrid time).
 
-Contact: infofinancego@gmail.com
+Live site: https://financego-olive.vercel.app · Contact: infofinancego@gmail.com
 
 ## Run it locally
 
@@ -53,8 +53,8 @@ export PATH="$HOME/.local/node/bin:$PATH"
 The site is a static export (`output: "export"`), hosted on **Vercel** from the private GitHub repository.
 
 1. In Vercel, import the GitHub repository (framework: Next.js; `vercel.json` sets the build and the `/` language redirect). Every push to `main` deploys.
-2. In **Project → Settings → Environment Variables**, set `NEXT_PUBLIC_SITE_URL` to the site's address (e.g. `https://financego.vercel.app`, or your own domain). It is used for the sitemap and social previews.
-3. **Daily news at 9:00:** headlines are fetched when the site is built. `.github/workflows/daily-news.yml` asks Vercel to rebuild every morning at 9:00 Madrid time. Create a deploy hook in **Vercel → Project → Settings → Git → Deploy Hooks** (branch `main`) and save its URL as the GitHub Actions secret `VERCEL_DEPLOY_HOOK`. GitHub schedules in UTC, so the workflow has two schedules (07:00 and 08:00 UTC) and a gate that lets through only the one that is 9:00 in Madrid in the current season; GitHub may start scheduled runs a few minutes late.
+2. In **Project → Settings → Environment Variables**, set `NEXT_PUBLIC_SITE_URL` to the site's address (e.g. `https://financego-olive.vercel.app`, or your own domain). It is used for the sitemap and social previews.
+3. **Daily news at 9:00:** headlines are fetched when the site is built. `.github/workflows/daily-news.yml` pushes an empty "Daily news refresh" commit to `main` every morning at 9:00 Madrid time, and Vercel redeploys it with the latest headlines. It needs no tokens or secrets (it uses GitHub's own `GITHUB_TOKEN`) and keeps the repository active. GitHub schedules in UTC, so the workflow has two schedules (07:00 and 08:00 UTC) and a gate that lets through only the one that is 9:00 in Madrid in the current season; GitHub may start scheduled runs a few minutes late. You can also run it by hand from the Actions tab.
 4. `.github/workflows/ci.yml` type-checks and tests every push.
 
 `src/lib/base-path.ts` and `NEXT_PUBLIC_BASE_PATH` let the site run under a sub-path (e.g. GitHub Pages); on Vercel it is empty.

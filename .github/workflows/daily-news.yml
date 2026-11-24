@@ -1,10 +1,7 @@
-# Every morning at 9:00 Madrid time, asks Vercel to rebuild FinanceGo so /news/ has the
-# headlines from 00:00 yesterday to 9:00 today (the site is static: news is fetched at build).
-# Vercel also rebuilds on every push to main through its GitHub integration.
-#
-# Setup (once): in Vercel → Project → Settings → Git → Deploy Hooks, create a hook for the
-# main branch and save its URL in GitHub → Settings → Secrets and variables → Actions as
-# VERCEL_DEPLOY_HOOK.
+# Every morning at 9:00 Madrid time, pushes an empty "daily news refresh" commit to main.
+# Vercel deploys every push to main, and the build fetches the latest headlines, so /news/
+# always shows the news from 00:00 yesterday to 9:00 today. No tokens or secrets needed:
+# the workflow uses GitHub's own GITHUB_TOKEN to push.
 name: Daily markets news
 
 on:
@@ -16,10 +13,14 @@ on:
     - cron: "0 8 * * *" # 9:00 Madrid in winter (UTC+1)
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: daily-news
+  cancel-in-progress: false
 
 jobs:
-  rebuild:
+  refresh:
     runs-on: ubuntu-latest
     steps:
       - name: Is it 9:00 in Madrid?
@@ -38,14 +39,15 @@ jobs:
           echo "Madrid offset: $(TZ=Europe/Madrid date +%z), cron: ${CRON:-none}, run: $run"
           echo "run=$run" >> "$GITHUB_OUTPUT"
 
-      - name: Trigger the Vercel rebuild
+      - uses: actions/checkout@v4
         if: steps.gate.outputs.run == 'true'
-        env:
-          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        with:
+          ref: main
+
+      - name: Push the daily refresh commit (Vercel redeploys)
+        if: steps.gate.outputs.run == 'true'
         run: |
-          if [ -z "$HOOK" ]; then
-            echo "::error::Add the VERCEL_DEPLOY_HOOK secret (see the comment at the top of this file)."
-            exit 1
-          fi
-          curl -fsS -X POST "$HOOK" > /dev/null
-          echo "Rebuild requested."
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Daily news refresh $(TZ=Europe/Madrid date +%Y-%m-%d)"
+          git push origin HEAD:main
