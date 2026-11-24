@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import type { ReactNode } from "react";
 import { ChevronRight } from "lucide-react";
 import type { SceneName } from "@/content/types";

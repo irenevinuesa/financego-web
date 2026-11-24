@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, BookOpen, CircleCheck, CircleDot, CircleX, Clock, Flag, RotateCcw, SkipForward } from "lucide-react";

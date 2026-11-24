@@ -1,6 +1,8 @@
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/cn";
+import { useLang } from "@/components/i18n/LangProvider";
+import type { Lang } from "@/lib/i18n";
 
 /* ───────────── Card ───────────── */
 
@@ -167,12 +169,23 @@ export function SectionHeading({ eyebrow, title, description, action, className 
 
 /* ───────────── Local-data notice ───────────── */
 
-export function LocalDataNote({ className }: { className?: string }) {
+const LOCAL_DATA_NOTE = {
+  en: { before: "Saved only in this browser. Clearing your browser data deletes it. You can export a backup in", link: "Settings" },
+  es: { before: "Guardado solo en este navegador. Si borras los datos del navegador, se elimina. Puedes exportar una copia de seguridad en", link: "Ajustes" },
+};
+
+/**
+ * Client-only (reads the language with useLang). Server Components can render it by passing `lang`,
+ * which skips the hook.
+ */
+export function LocalDataNote({ className, lang }: { className?: string; lang?: Lang }) {
+  // `lang` is fixed per call site, so whether the hook runs never changes between renders.
+  const tx = LOCAL_DATA_NOTE[lang ?? useLang()];
   return (
     <p className={cn("text-xs text-ink-muted", className)}>
-      Saved only in this browser. Clearing your browser data deletes it. You can export a backup in{" "}
+      {tx.before}{" "}
       <Link href="/settings/" className="font-medium text-electric underline-offset-2 hover:underline">
-        Settings
+        {tx.link}
       </Link>
       .
     </p>

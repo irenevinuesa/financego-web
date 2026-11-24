@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
+import { asset } from "@/lib/base-path";
 import { cn } from "@/lib/cn";
 
 /**
@@ -9,7 +10,7 @@ import { cn } from "@/lib/cn";
 export function LogoMark({ className }: { className?: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src="/brand/logo-mark.png" alt="" aria-hidden width={160} height={160} className={cn("rounded-[22%]", className)} />
+    <img src={asset("/brand/logo-mark.png")} alt="" aria-hidden width={160} height={160} className={cn("rounded-[22%]", className)} />
   );
 }
 

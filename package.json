@@ -2,7 +2,7 @@
   "name": "financego",
   "version": "0.1.0",
   "private": true,
-  "description": "FinanceGo \u2014 Learn Finance. Think Bigger. Go Further.",
+  "description": "FinanceGo — Learn Finance. Think Bigger. Go Further.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "patterns": "node scripts/build-patterns.mjs"
+    "patterns": "node scripts/build-patterns.mjs",
+    "og-image": "node scripts/build-og-image.mjs"
   },
   "engines": {
     "node": ">=20.9.0"

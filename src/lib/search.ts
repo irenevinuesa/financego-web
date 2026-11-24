@@ -12,6 +12,7 @@ import { QUESTIONS } from "@/content/questions";
 import { CATEGORIES, TOPIC_IDS, TOPICS } from "@/content/taxonomy";
 import { sectionInfo } from "@/content/practice-sections";
 import { TOOLS } from "@/content/tools";
+import { TEASERS } from "@/content/brain-teasers";
 import { normalize } from "./text";
 
 export type SearchType = "Section" | "Course" | "Lesson" | "Question" | "Behavioural" | "Tool" | "Career" | "Resource";
@@ -41,14 +42,16 @@ function blocksText(blocks: { type: string; [k: string]: unknown }[]): string {
 
 function buildIndex(): SearchEntry[] {
   const entries: SearchEntry[] = [
-    { type: "Section", title: "Technicals", description: "Learn, Practice, the 500 Challenge and the technical mock interview.", href: "/technicals/", body: "technical interview preparation hub", badge: "Technicals" },
+    { type: "Section", title: "Technicals", description: "Learn, Practice, the 500 Challenge and the mock interview.", href: "/technicals/", body: "technical interview preparation hub", badge: "Technicals" },
     { type: "Section", title: "500 Challenge", description: "500 mixed questions that unlock one by one, with a list of missed questions to repeat.", href: "/challenge/", body: "challenge recruiting season unlock stages missed repeat five hundred", badge: "Technicals" },
+    { type: "Section", title: "Brain teasers", description: "Probability, expected value, mental maths, logic puzzles, sequences and market sizing.", href: "/brain-teasers/", body: TEASERS.map((t) => `${t.title.en} ${t.prompt.en}`).join(" "), badge: "Brain teasers" },
+    { type: "Section", title: "Markets news", description: "Today's market headlines, each linked to the concept behind it.", href: "/news/", body: "news headlines markets today economy central banks fed ecb earnings fx commodities daily", badge: "News" },
+    { type: "Section", title: "Interview planner", description: "A personalised day-by-day calendar from today to your interview.", href: "/planner/", body: "planner calendar schedule study plan interview date prepare weeks months", badge: "Planner" },
+    { type: "Section", title: "Mock interview", description: "Timed numeric interview questions in five levels, graded right or wrong.", href: "/technicals/interview/", body: "mock interview timed timer numeric mental maths rapid fire levels", badge: "Technicals" },
     { type: "Section", title: "Practice by section", description: "Question bank organised by section, with progress and accuracy.", href: "/practice/", body: "practice questions sections bank", badge: "Technicals" },
-    { type: "Section", title: "Technical mock interview", description: "Scripted technical interviews with follow-ups and feedback.", href: "/technicals/interview/", body: "interview simulator mock technical case market pitch", badge: "Technicals" },
-    { type: "Section", title: "Behaviourals guide", description: "What behavioural interviews test and how to answer: STAR, your pitch, why finance.", href: "/behaviourals/", body: GUIDE_SECTIONS.map((g) => `${g.title} ${g.intro} ${g.points.map((p) => `${p.title} ${p.body}`).join(" ")}`).join(" "), badge: "Behaviourals" },
+    { type: "Section", title: "Behaviourals guide", description: "What behavioural interviews test and how to answer: STAR, your pitch, why finance.", href: "/behaviourals/", body: GUIDE_SECTIONS.map((g) => `${g.title.en} ${g.intro.en} ${g.points.map((p) => `${p.title.en} ${p.body.en}`).join(" ")}`).join(" "), badge: "Behaviourals" },
     { type: "Section", title: "Behavioural question library", description: "Common behavioural and fit questions by category.", href: "/behaviourals/questions/", body: "behavioural fit questions library categories", badge: "Behaviourals" },
     { type: "Section", title: "Story bank", description: "Write your STAR stories once and map them to question categories.", href: "/behaviourals/stories/", body: "story bank star stories situation task action result", badge: "Behaviourals" },
-    { type: "Section", title: "Behavioural mock interview", description: "Scripted behavioural interviews with follow-ups and feedback.", href: "/behaviourals/interview/", body: "interview simulator mock behavioural fit", badge: "Behaviourals" },
   ];
 
   for (const t of TOPIC_IDS) {
@@ -98,8 +101,8 @@ function buildIndex(): SearchEntry[] {
   for (const t of TOOLS) {
     entries.push({
       type: "Tool",
-      title: t.title,
-      description: t.summary,
+      title: t.title.en,
+      description: t.summary.en,
       href: t.status === "available" ? `/tools/${t.slug}/` : "/tools/",
       body: t.category,
       badge: t.status === "available" ? t.category : "Planned",

@@ -3,25 +3,34 @@
 import { useMemo } from "react";
 import { BEHAVIOURAL_QUESTIONS, BQ_CATEGORY_IDS } from "@/content/behaviourals/questions";
 import { useHydrated, useStore } from "@/lib/store";
+import { useLang } from "@/components/i18n/LangProvider";
+
+const TEXT = {
+  en: {
+    questions: (n: number, total: number, q: number) => `${n}/${total} categories covered by your stories · ${q} questions`,
+    stories: (n: number) => `${n} stor${n === 1 ? "y" : "ies"} saved · aim for 6–8`,
+  },
+  es: {
+    questions: (n: number, total: number, q: number) => `${n}/${total} categorías cubiertas por tus historias · ${q} preguntas`,
+    stories: (n: number) => `${n} ${n === 1 ? "historia guardada" : "historias guardadas"} · objetivo: 6–8`,
+  },
+};
 
 /** One line of live progress for each Behaviourals area, shown on the hub cards. */
-export function BehaviouralsProgress({ area }: { area: "guide" | "questions" | "stories" | "interview" }) {
+export function BehaviouralsProgress({ area }: { area: "guide" | "questions" | "stories" }) {
   const state = useStore();
   const hydrated = useHydrated();
+  const tx = TEXT[useLang()];
   const text = useMemo(() => {
     const covered = new Set(state.stories.flatMap((s) => s.categories));
     if (area === "guide") return null;
     if (area === "questions") {
       const n = BQ_CATEGORY_IDS.filter((c) => covered.has(c)).length;
-      return { value: n / BQ_CATEGORY_IDS.length, label: `${n}/${BQ_CATEGORY_IDS.length} categories covered by your stories · ${BEHAVIOURAL_QUESTIONS.length} questions` };
+      return { value: n / BQ_CATEGORY_IDS.length, label: tx.questions(n, BQ_CATEGORY_IDS.length, BEHAVIOURAL_QUESTIONS.length) };
     }
-    if (area === "stories") {
-      const n = state.stories.length;
-      return { value: Math.min(1, n / 8), label: `${n} stor${n === 1 ? "y" : "ies"} saved · aim for 6–8` };
-    }
-    const n = state.interviews.filter((r) => r.format === "behavioral").length;
-    return { value: Math.min(1, n / 5), label: `${n} behavioural mock interview${n === 1 ? "" : "s"} done` };
-  }, [area, state]);
+    const n = state.stories.length;
+    return { value: Math.min(1, n / 8), label: tx.stories(n) };
+  }, [area, state, tx]);
 
   if (!text) return null;
   if (!hydrated) return <div className="mt-4 h-6" />;

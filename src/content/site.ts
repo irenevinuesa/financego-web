@@ -2,9 +2,6 @@
 export const SITE = {
   name: "FinanceGo",
   tagline: "Learn Finance. Think Bigger. Go Further.",
-  /**
-   * Public contact address for help and feedback. Left empty on purpose: the
-   * Help page says plainly that no feedback channel is connected until this is set.
-   */
-  contactEmail: "",
+  /** Public contact address for help, feedback and privacy requests. */
+  contactEmail: "infofinancego@gmail.com",
 };

@@ -50,17 +50,26 @@ export function fmtDuration(seconds: number): string {
   return m ? `${h}h ${m}m` : `${h}h`;
 }
 
-export function fmtDate(iso: string, opts: Intl.DateTimeFormatOptions = { day: "numeric", month: "short", year: "numeric" }) {
+export function fmtDate(iso: string, opts: Intl.DateTimeFormatOptions = { day: "numeric", month: "short", year: "numeric" }, locale = "en-GB") {
   if (!iso) return "—";
   // YYYY-MM-DD strings are local calendar dates; parse them without a timezone shift.
   const d = /^\d{4}-\d{2}-\d{2}$/.test(iso) ? new Date(`${iso}T00:00:00`) : new Date(iso);
   if (Number.isNaN(d.getTime())) return "—";
-  return d.toLocaleDateString("en-GB", opts);
+  return d.toLocaleDateString(locale, opts);
 }
 
-export function fmtRelative(iso: string, now = new Date()): string {
+export function fmtRelative(iso: string, now = new Date(), lang: "en" | "es" = "en"): string {
   const d = new Date(iso);
   const diff = (now.getTime() - d.getTime()) / 1000;
+  if (lang === "es") {
+    if (diff < 60) return "ahora mismo";
+    if (diff < 3600) return `hace ${Math.floor(diff / 60)} min`;
+    if (diff < 86400) return `hace ${Math.floor(diff / 3600)} h`;
+    const days = Math.floor(diff / 86400);
+    if (days === 1) return "ayer";
+    if (days < 7) return `hace ${days} días`;
+    return fmtDate(iso, undefined, "es-ES");
+  }
   if (diff < 60) return "just now";
   if (diff < 3600) return `${Math.floor(diff / 60)} min ago`;
   if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;

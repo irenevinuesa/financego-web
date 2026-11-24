@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { useMemo, useState } from "react";
 import { ArrowRight, CircleCheck, CircleDot, CircleX, RotateCcw } from "lucide-react";
 import { QUESTIONS, QUESTION_TYPE_LABELS, type QuestionTypeFilter } from "@/content/questions";

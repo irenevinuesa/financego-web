@@ -6,6 +6,7 @@
  * sent to a server. Clearing site data deletes it, which the UI says clearly.
  */
 
+import type { PlanInput } from "./planner";
 import { useSyncExternalStore } from "react";
 import type { Difficulty, InterviewFormat, Lang, TopicId, TrackId } from "@/content/types";
 
@@ -150,6 +151,21 @@ export interface Story {
   updatedAt: string;
 }
 
+/** An interview plan: what the learner entered, plus the tasks they have ticked. Tasks are rebuilt from the input. */
+export interface SavedPlan extends PlanInput {
+  id: string;
+  createdAt: string;
+  done: string[];
+}
+
+/** Best and latest score for one mock interview level (out of 10). */
+export interface MockLevelResult {
+  best: number;
+  last: number;
+  attempts: number;
+  lastAt: string;
+}
+
 export interface Profile {
   name: string;
   track: TrackId | "";
@@ -172,6 +188,11 @@ export interface StoreState {
   lastLesson?: { courseId: string; lessonId: string; at: string };
   challenge: ChallengeState;
   stories: Story[];
+  /** Mock interview results by level ("1" to "5"). */
+  mock: Record<string, MockLevelResult>;
+  plans: SavedPlan[];
+  /** Ids of brain teasers the learner has solved. */
+  teasersSolved: string[];
 }
 
 export function emptyState(): StoreState {
@@ -189,6 +210,9 @@ export function emptyState(): StoreState {
     study: {},
     challenge: { answers: {}, retries: {}, targetDate: "" },
     stories: [],
+    mock: {},
+    plans: [],
+    teasersSolved: [],
   };
 }
 
@@ -246,6 +270,9 @@ export function sanitizeState(raw: unknown): StoreState {
       targetDate: typeof challenge.targetDate === "string" ? challenge.targetDate : "",
     },
     stories: Array.isArray(raw.stories) ? (raw.stories as Story[]) : [],
+    mock: isRecord(raw.mock) ? (raw.mock as StoreState["mock"]) : {},
+    teasersSolved: Array.isArray(raw.teasersSolved) ? (raw.teasersSolved as unknown[]).filter((x): x is string => typeof x === "string") : [],
+    plans: Array.isArray(raw.plans) ? (raw.plans as SavedPlan[]).filter((p) => isRecord(p) && typeof p.interviewDate === "string").map((p) => ({ ...p, done: Array.isArray(p.done) ? p.done : [] })) : [],
   };
 }
 
@@ -380,6 +407,46 @@ export const actions = {
 
   deleteInterview(id: string) {
     update((s) => ({ ...s, interviews: s.interviews.filter((i) => i.id !== id) }));
+  },
+
+  addPlan(input: PlanInput): string {
+    const id = uid();
+    update((s) => ({ ...s, plans: [...s.plans, { ...input, id, createdAt: new Date().toISOString(), done: [] }] }));
+    return id;
+  },
+
+  deletePlan(id: string) {
+    update((s) => ({ ...s, plans: s.plans.filter((p) => p.id !== id) }));
+  },
+
+  togglePlanTask(planId: string, taskId: string) {
+    update((s) => ({
+      ...s,
+      plans: s.plans.map((p) =>
+        p.id !== planId ? p : { ...p, done: p.done.includes(taskId) ? p.done.filter((t) => t !== taskId) : [...p.done, taskId] },
+      ),
+    }));
+  },
+
+  setTeaserSolved(id: string, solved: boolean) {
+    update((s) => ({
+      ...s,
+      teasersSolved: solved ? (s.teasersSolved.includes(id) ? s.teasersSolved : [...s.teasersSolved, id]) : s.teasersSolved.filter((t) => t !== id),
+    }));
+  },
+
+  recordMockRun(level: number, score: number) {
+    const key = String(level);
+    update((s) => {
+      const prev = s.mock[key];
+      return {
+        ...s,
+        mock: {
+          ...s.mock,
+          [key]: { best: Math.max(prev?.best ?? 0, score), last: score, attempts: (prev?.attempts ?? 0) + 1, lastAt: new Date().toISOString() },
+        },
+      };
+    });
   },
 
   addStudySeconds(seconds: number) {

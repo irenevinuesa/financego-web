@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "(?i)^\\s*es.*" }],
+      "destination": "/es/",
+      "permanent": false
+    },
+    { "source": "/", "destination": "/en/", "permanent": false }
+  ]
+}

@@ -183,8 +183,8 @@ export const ROADMAPS: Roadmap[] = [
       { title: "Drill technicals", detail: "Accounting and valuation questions until you score 80%+.", href: "/practice/accounting/", cta: "Accounting practice" },
       { title: "Deal technicals", detail: "M&A questions, including accretion/dilution and deal rationale.", href: "/practice/ma/", cta: "M&A practice" },
       { title: "Build it yourself", detail: "Run the DCF tool and explain every assumption.", href: "/tools/dcf/", cta: "DCF Builder" },
-      { title: "Simulate interviews", detail: "Three technical mock interviews, then review the feedback.", href: "/technicals/interview/?track=investment-banking", cta: "Technical mock interview" },
-      { title: "Rehearse your story", detail: "“Why banking?”, your CV walk-through and teamwork questions.", href: "/behaviourals/interview/", cta: "Behavioural mock interview" },
+      { title: "Interview questions", detail: "Investment banking interview questions, weighted towards traps and cases.", href: "/practice/session/?mode=interview&track=investment-banking", cta: "IB interview prep" },
+      { title: "Rehearse your story", detail: "“Why banking?”, your CV walk-through and teamwork questions.", href: "/behaviourals/stories/", cta: "Story bank" },
     ],
   },
   {
@@ -207,8 +207,8 @@ export const ROADMAPS: Roadmap[] = [
       { title: "Sharpen valuation", detail: "Terminal value, sensitivities and sanity checks.", href: "/learn/dcf/sensitivity/", cta: "Sensitivity lesson" },
       { title: "LBO intuition", detail: "Paper LBOs, IRR and MOIC rules of thumb.", href: "/practice/lbo/", cta: "LBO practice" },
       { title: "Think like an investor", detail: "Business quality, value creation and risks.", href: "/career/private-equity/", cta: "PE career guide" },
-      { title: "Simulate interviews", detail: "Private equity technical and case interviews.", href: "/technicals/interview/?track=private-equity", cta: "PE mock interview" },
-      { title: "Explain the move", detail: "“Why private equity?” and the deals on your CV.", href: "/behaviourals/interview/", cta: "Behavioural mock interview" },
+      { title: "Interview questions", detail: "Private equity technical and case questions.", href: "/practice/session/?mode=interview&track=private-equity", cta: "PE interview prep" },
+      { title: "Explain the move", detail: "“Why private equity?” and the deals on your CV.", href: "/behaviourals/stories/", cta: "Story bank" },
     ],
   },
   {
@@ -221,7 +221,7 @@ export const ROADMAPS: Roadmap[] = [
       { title: "Markets questions", detail: "Rates, FX and equity reactions to data and policy, until the reasoning is automatic.", href: "/practice/markets/", cta: "Markets practice" },
       { title: "Derivatives questions", detail: "Option payoffs, the Greeks and volatility.", href: "/practice/derivatives/", cta: "Derivatives practice" },
       { title: "Brain teasers", detail: "Probability and mental maths.", href: "/practice/brain-teasers/", cta: "Brain teasers" },
-      { title: "Simulate interviews", detail: "Market discussions and trade pitches.", href: "/technicals/interview/?track=sales-trading", cta: "S&T mock interview" },
+      { title: "Interview questions", detail: "Market discussions and trade ideas.", href: "/practice/session/?mode=interview&track=sales-trading", cta: "S&T interview prep" },
     ],
   },
   {
@@ -233,7 +233,7 @@ export const ROADMAPS: Roadmap[] = [
       { title: "Read the statements critically", detail: "Accruals, working capital and earnings quality.", href: "/learn/accounting-fundamentals/accruals/", cta: "Accruals lesson" },
       { title: "Valuation questions", detail: "Practise the trap questions on multiples and earnings quality.", href: "/practice/valuation/", cta: "Valuation practice" },
       { title: "Markets questions", detail: "How macro and rates feed into the assets you pitch.", href: "/practice/markets/", cta: "Markets practice" },
-      { title: "Pitch practice", detail: "Stock pitch interviews with follow-ups.", href: "/technicals/interview/?track=hedge-funds&type=pitch", cta: "Pitch mock interview" },
+      { title: "Interview questions", detail: "Hedge fund interview questions, including pitch-style cases.", href: "/practice/session/?mode=interview&track=hedge-funds", cta: "HF interview prep" },
     ],
   },
 ];

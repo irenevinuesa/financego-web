@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { useState } from "react";
 import { ArrowRight, Award, RotateCcw } from "lucide-react";
 import type { Question } from "@/content/types";

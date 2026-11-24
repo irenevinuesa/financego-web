@@ -49,7 +49,7 @@ export const TRACKS: Record<TrackId, { label: string; short: string }> = {
 
 export const TRACK_IDS = Object.keys(TRACKS) as TrackId[];
 
-/** Tracks offered in the Interview Simulator (the spec lists nine). */
+/** Career tracks used by Interview Preparation practice (the spec lists nine). */
 export const INTERVIEW_TRACK_IDS: TrackId[] = [
   "investment-banking",
   "private-equity",

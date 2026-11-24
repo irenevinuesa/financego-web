@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { BookOpen, Clock } from "lucide-react";
 import type { CourseMeta } from "@/content/types";
 import { CATEGORIES } from "@/content/taxonomy";

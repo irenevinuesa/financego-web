@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { ChevronDown, NotebookPen, Search } from "lucide-react";
 import { BEHAVIOURAL_QUESTIONS, BQ_CATEGORIES, BQ_CATEGORY_IDS, type BQCategory } from "@/content/behaviourals/questions";
 import { useHydrated, useStore } from "@/lib/store";

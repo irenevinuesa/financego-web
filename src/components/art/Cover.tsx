@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { BookOpen, Briefcase, Building, ChartLine, Globe, Mountain, Sigma, TrendingUp, type LucideIcon } from "lucide-react";
 import type { CategoryId, SceneName } from "@/content/types";
+import { asset } from "@/lib/base-path";
 import { cn } from "@/lib/cn";
 
 /**
@@ -37,7 +38,7 @@ export const CATEGORY_ICONS: Record<CategoryId, LucideIcon> = {
 
 export function Cover({ name, className, title, children }: { name: SceneName; className?: string; title?: string; children?: ReactNode }) {
   const v = VARIANTS[name];
-  const mask = `url(/patterns/${name}.svg)`;
+  const mask = `url(${asset(`/patterns/${name}.svg`)})`;
   const lines: CSSProperties = {
     backgroundColor: v.line,
     opacity: v.opacity,

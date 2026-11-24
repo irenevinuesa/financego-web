@@ -6,3 +6,9 @@ coverage/
 next-env.d.ts
 .DS_Store
 .env*
+
+# Not part of the website (kept locally)
+*.ipynb
+/Elegant FG Monogram on Deep Blue.png
+/abrir-web.applescript
+.claude/

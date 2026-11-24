@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { useRef, useState } from "react";
 import { ArrowRight, BookOpen, Check, CircleCheck, CircleX, Lightbulb, MessageSquare, TriangleAlert } from "lucide-react";
 import type { Question, QuestionStep } from "@/content/types";

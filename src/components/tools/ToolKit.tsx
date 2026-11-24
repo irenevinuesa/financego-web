@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import type { ReactNode } from "react";
 import { BookOpen, Download, RotateCcw, Target } from "lucide-react";
 import type { ToolMeta } from "@/content/tools";

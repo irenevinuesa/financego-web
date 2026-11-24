@@ -99,4 +99,13 @@ describe("bank C", () => {
     expect(open / n).toBeLessThan(0.13);
     expect(multi).toBeGreaterThanOrEqual(3);
   });
+
+  it("spreads MCQ answers across option positions", () => {
+    const answers = BANK_C.flatMap((q) =>
+      q.format === "mcq" ? [q.answer!] : (q.steps ?? []).filter((s) => s.format === "mcq").map((s) => s.answer!),
+    );
+    const counts = [0, 1, 2, 3].map((i) => answers.filter((a) => a === i).length);
+    counts.forEach((n) => expect(n / answers.length).toBeGreaterThan(0.15));
+    counts.forEach((n) => expect(n / answers.length).toBeLessThan(0.35));
+  });
 });

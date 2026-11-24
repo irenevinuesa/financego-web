@@ -6,7 +6,7 @@
 import { COURSES, getCourse, lessonHref } from "@/content/courses";
 import { findAnyQuestion, getQuestion } from "@/content/questions";
 import { SKILL_IDS, TOPICS } from "@/content/taxonomy";
-import type { Course, Difficulty, Lesson, SkillId, TopicId } from "@/content/types";
+import type { Course, Difficulty, Lang, Lesson, SkillId, TopicId } from "@/content/types";
 import { localDate, lessonKey, STAGE_LABELS, type Application, type Attempt, type Goal, type StoreState } from "./store";
 
 export interface CourseProgress {
@@ -203,22 +203,23 @@ export function studyLastDays(state: StoreState, days = 7, today = localDate()):
 
 export interface ActivityItem {
   at: string;
-  kind: "lesson" | "practice" | "interview" | "application" | "assessment";
+  kind: "lesson" | "practice" | "interview" | "application" | "assessment" | "plan";
   label: string;
   href: string;
 }
 
-export function recentActivity(state: StoreState, limit = 8): ActivityItem[] {
+export function recentActivity(state: StoreState, limit = 8, lang: Lang = "en"): ActivityItem[] {
+  const es = lang === "es";
   const items: ActivityItem[] = [];
   for (const [key, l] of Object.entries(state.lessons)) {
     const [courseId, lessonId] = key.split("/");
     const course = getCourse(courseId);
     const lesson = course?.lessons.find((x) => x.id === lessonId);
-    if (course && lesson) items.push({ at: l.completedAt, kind: "lesson", label: `Completed “${lesson.title}”`, href: lessonHref(courseId, lessonId) });
+    if (course && lesson) items.push({ at: l.completedAt, kind: "lesson", label: es ? `Completaste «${lesson.title}»` : `Completed “${lesson.title}”`, href: lessonHref(courseId, lessonId) });
   }
   for (const [courseId, a] of Object.entries(state.assessments)) {
     const course = getCourse(courseId);
-    if (course) items.push({ at: a.lastAt, kind: "assessment", label: `${course.title} assessment: ${Math.round(a.lastScore * 100)}%`, href: `/learn/${courseId}/assessment/` });
+    if (course) items.push({ at: a.lastAt, kind: "assessment", label: `${course.title} ${es ? "evaluación" : "assessment"}: ${Math.round(a.lastScore * 100)}%`, href: `/learn/${courseId}/assessment/` });
   }
   // Group practice attempts by day so the feed is not flooded.
   const practiceByDay = new Map<string, { at: string; n: number; correct: number }>();
@@ -230,8 +231,13 @@ export function recentActivity(state: StoreState, limit = 8): ActivityItem[] {
     if (a.at > cur.at) cur.at = a.at;
     practiceByDay.set(d, cur);
   }
-  for (const p of practiceByDay.values()) items.push({ at: p.at, kind: "practice", label: `Answered ${p.n} practice question${p.n === 1 ? "" : "s"}`, href: "/practice/" });
-  for (const i of state.interviews) items.push({ at: i.at, kind: "interview", label: `${i.format === "behavioral" ? "Behavioural" : "Technical"} mock interview completed (${i.answered} answers)`, href: i.format === "behavioral" ? "/behaviourals/interview/" : "/technicals/interview/" });
+  for (const p of practiceByDay.values()) items.push({ at: p.at, kind: "practice", label: es ? `Respondiste ${p.n} pregunta${p.n === 1 ? "" : "s"} de práctica` : `Answered ${p.n} practice question${p.n === 1 ? "" : "s"}`, href: "/practice/" });
+  for (const [level, r] of Object.entries(state.mock)) {
+    if (r.lastAt) items.push({ at: r.lastAt, kind: "interview", label: es ? `Mock interview nivel ${level}: ${r.last}/10 (mejor ${r.best}/10)` : `Mock interview level ${level}: ${r.last}/10 (best ${r.best}/10)`, href: "/technicals/interview/" });
+  }
+  for (const p of state.plans) items.push({ at: p.createdAt, kind: "plan", label: es
+        ? `Creaste un plan ${p.firm.trim() ? `de entrevista con ${p.firm.trim()}` : "para tu entrevista"} (${p.interviewDate})`
+        : `Created a plan for ${p.firm.trim() || "your interview"} on ${p.interviewDate}`, href: "/planner/" });
   return items.sort((a, b) => (a.at < b.at ? 1 : -1)).slice(0, limit);
 }
 
@@ -269,7 +275,10 @@ export function hasAnyProgress(state: StoreState) {
     state.attempts.length > 0 ||
     state.interviews.length > 0 ||
     Object.keys(state.challenge.answers).length > 0 ||
-    state.stories.length > 0
+    state.stories.length > 0 ||
+    Object.keys(state.mock).length > 0 ||
+    state.teasersSolved.length > 0 ||
+    state.plans.length > 0
   );
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n/Link";
 import { useMemo, useState } from "react";
 import { ArrowRight, CalendarClock, Lock, Repeat, RotateCcw, Trophy } from "lucide-react";
 import { TOPICS } from "@/content/taxonomy";
