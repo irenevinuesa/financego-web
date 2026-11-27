@@ -49,7 +49,7 @@ export const MAIN_NAV: NavGroup[] = [
   { href: "/behaviourals/", label: { en: "Behaviourals", es: "Behaviourals" }, description: { en: "Stories, questions and answers", es: "Historias, preguntas y respuestas" }, icon: Users, children: BEHAVIOURALS_LINKS },
   { href: "/brain-teasers/", label: { en: "Brain Teasers", es: "Brain Teasers" }, description: { en: "Puzzles, probability and mental maths", es: "Acertijos, probabilidad y cálculo mental" }, icon: Puzzle },
   { href: "/tools/", label: { en: "Tools", es: "Tools" }, description: { en: "Working calculators and models", es: "Calculadoras y modelos que funcionan" }, icon: Calculator },
-  { href: "/news/", label: { en: "News", es: "Noticias" }, description: { en: "Today's market headlines", es: "Los titulares de mercados del día" }, icon: Newspaper },
+  { href: "/news/", label: { en: "News", es: "Noticias" }, description: { en: "A selection of market headlines", es: "Una selección de titulares de mercados" }, icon: Newspaper },
   { href: "/planner/", label: { en: "Planner", es: "Planner" }, description: { en: "A day-by-day calendar to your interview", es: "Un calendario día a día hasta tu entrevista" }, icon: CalendarDays },
   { href: "/career/", label: { en: "Career", es: "Career" }, description: { en: "Career guides and recruiting prep", es: "Guías de carrera y preparación del proceso" }, icon: Compass },
 ];

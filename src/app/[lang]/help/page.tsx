@@ -56,7 +56,7 @@ const FAQ: Record<Lang, [string, ReactNode][]> = {
     ["Why are some courses “in development”?", "Six courses are complete today. The rest of the library is listed with its planned outline so you can see what is coming, but they cannot be started until they are written."],
     ["How does the mock interview work?", "It has 50 short numeric questions in five levels. Each question has its own time limit; when it runs out, the answer counts as wrong. Score 7 out of 10 to unlock the next level."],
     ["How is my interview plan built?", "From your interview date, role, study days and daily time. It schedules lessons first, then practice, the 500 Challenge and the mock interview, then a final stretch of interview-style questions. You can add it to your own calendar."],
-    ["How often is the News page updated?", "Every morning at 9:00 Madrid time, with headlines from 00:00 the day before. Headlines come from public feeds of third-party publishers and link to the original articles."],
+    ["Is the News page updated?", "No. It shows a fixed selection of market headlines collected in November 2026. Headlines come from public feeds of third-party publishers and link to the original articles."],
     ["Does FinanceGo work on my phone?", "Yes. Every section is designed for phones, tablets and desktops."],
   ],
   es: [
@@ -77,7 +77,7 @@ const FAQ: Record<Lang, [string, ReactNode][]> = {
     ["¿Por qué algunos cursos están «en desarrollo»?", "Hoy hay seis cursos completos. El resto del catálogo aparece con su temario previsto para que veas lo que viene, pero no se pueden empezar hasta que estén escritos."],
     ["¿Cómo funciona el Mock interview?", "Tiene 50 preguntas numéricas breves en cinco niveles. Cada pregunta tiene su propio límite de tiempo; si se agota, la respuesta cuenta como incorrecta. Saca 7 de 10 para desbloquear el siguiente nivel."],
     ["¿Cómo se crea mi plan de entrevista?", "A partir de la fecha de tu entrevista, el puesto, los días de estudio y el tiempo diario. Programa primero las lecciones, después la práctica, el 500 Challenge y el Mock interview, y por último un tramo final de preguntas tipo entrevista. Puedes añadirlo a tu propio calendario."],
-    ["¿Cada cuánto se actualiza la página de Noticias?", "Cada mañana a las 9:00, hora de Madrid, con titulares desde las 00:00 del día anterior. Los titulares proceden de fuentes públicas de editores externos y enlazan a los artículos originales."],
+    ["¿Se actualiza la página de Noticias?", "No. Muestra una selección fija de titulares de mercados recopilados en noviembre de 2026. Los titulares proceden de fuentes públicas de editores externos y enlazan a los artículos originales."],
     ["¿Funciona FinanceGo en el móvil?", "Sí. Todas las secciones están diseñadas para móviles, tabletas y ordenadores."],
   ],
 };

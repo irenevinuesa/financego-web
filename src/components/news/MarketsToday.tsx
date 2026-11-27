@@ -8,16 +8,16 @@ import { getLang } from "@/lib/server-lang";
 
 const TEXT = {
   en: {
-    eyebrow: "Markets today",
+    eyebrow: "Markets news",
     title: "What is moving the markets",
-    description: "The latest headlines, refreshed every morning at 9:00. Each one links to the FinanceGo concept behind it.",
+    description: "A selection of market headlines. Each one links to the FinanceGo concept behind it.",
     all: "All headlines",
     opens: "(opens the original article)",
   },
   es: {
-    eyebrow: "Mercados hoy",
+    eyebrow: "Noticias de mercados",
     title: "Qué está moviendo los mercados",
-    description: "Los últimos titulares, actualizados cada mañana a las 9:00. Cada uno enlaza con el concepto de FinanceGo que hay detrás.",
+    description: "Una selección de titulares de mercados. Cada uno enlaza con el concepto de FinanceGo que hay detrás.",
     all: "Todos los titulares",
     opens: "(abre el artículo original)",
   },

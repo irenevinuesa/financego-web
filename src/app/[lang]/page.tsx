@@ -8,7 +8,7 @@ import { CourseCard } from "@/components/learn/CourseCard";
 import { ProgressPreview, QuestionOfTheDay } from "@/components/home/HomeClient";
 import { WaccEv } from "@/components/learn/widgets/valuation";
 import { CHALLENGE_TARGET, STAGES, STAGE_SIZE } from "@/lib/challenge";
-import { loadNews } from "@/lib/news";
+import { getNews } from "@/lib/news";
 import { MarketsToday } from "@/components/news/MarketsToday";
 import type { Lang } from "@/lib/i18n";
 import { getLang } from "@/lib/server-lang";
@@ -205,7 +205,7 @@ const TEXT = {
 export default async function HomePage() {
   const lang = await getLang();
   const tx = TEXT[lang];
-  const { items: news } = await loadNews();
+  const { items: news } = getNews();
   const featured = FEATURED_COURSE_IDS.map((id) => ALL_COURSES.find((c) => c.id === id)!).filter(Boolean);
 
   return (

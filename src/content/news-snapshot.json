@@ -1,0 +1,725 @@
+{
+  "items": [
+    {
+      "id": "inv-stocks:https://www.investing.com/news/stock-market-news/imperial-shares-jump-to-highest-since-2017-on-japan-tobacco-deal-report-5052501",
+      "title": "Imperial stock sees best day since 1999 on Altria, Japan Tobacco takeover interest",
+      "teaser": "",
+      "url": "https://www.investing.com/news/stock-market-news/imperial-shares-jump-to-highest-since-2017-on-japan-tobacco-deal-report-5052501",
+      "publishedAt": "2026-11-26T17:53:29.000Z",
+      "source": "Investing.com",
+      "category": "markets"
+    },
+    {
+      "id": "cnbc-investing:https://www.cnbc.com/2026/11/26/semiconductor-chips-are-the-new-oil-heres-why.html",
+      "title": "Semiconductor chips are the new oil. Here's why",
+      "teaser": "Semiconductor exports overtook oil and gas for the first time in 2026, as the AI boom fueled chip demand.",
+      "url": "https://www.cnbc.com/2026/11/26/semiconductor-chips-are-the-new-oil-heres-why.html",
+      "publishedAt": "2026-11-26T17:52:15.000Z",
+      "source": "CNBC",
+      "category": "markets"
+    },
+    {
+      "id": "inv-economy:https://www.investing.com/news/economy-news/european-stocks-rally-as-tech-and-banks-rebound-tariff-fears-ease-5052228",
+      "title": "European stocks end higher on easing tariff fears, ECB leadership continuity",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economy-news/european-stocks-rally-as-tech-and-banks-rebound-tariff-fears-ease-5052228",
+      "publishedAt": "2026-11-26T17:48:34.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "inv-stocks:https://www.investing.com/news/stock-market-news/marlboro-maker-altria-explores-takeover-of-uks-imperial-brands-5052558",
+      "title": "US Marlboro maker Altria explores Imperial cash bid, possible carve-up",
+      "teaser": "",
+      "url": "https://www.investing.com/news/stock-market-news/marlboro-maker-altria-explores-takeover-of-uks-imperial-brands-5052558",
+      "publishedAt": "2026-11-26T17:48:20.000Z",
+      "source": "Investing.com",
+      "category": "markets"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/696e99b0-f6d1-4a1a-95b0-f68de88520d9?syn-25a6b1a6=1",
+      "title": "Altria explores takeover bid for Imperial Brands",
+      "teaser": "Deal would remove another of the UK’s large listed companies from the London stock market",
+      "url": "https://www.ft.com/content/696e99b0-f6d1-4a1a-95b0-f68de88520d9?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T17:46:48.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "inv-economy:https://www.investing.com/news/economy-news/euro-countries-pick-spains-de-cos-as-ecb-chief-costa-says-5052656",
+      "title": "Euro countries pick Spain’s De Cos as ECB chief, Costa says",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economy-news/euro-countries-pick-spains-de-cos-as-ecb-chief-costa-says-5052656",
+      "publishedAt": "2026-11-26T17:30:24.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "inv-stocks:https://www.investing.com/news/stock-market-news/european-shares-as-benign-us-tariffs-and-thanksgiving-lull-offer-relief-5052089",
+      "title": "European stocks end higher as benign U.S. tariffs, Thanksgiving lull offer relief",
+      "teaser": "",
+      "url": "https://www.investing.com/news/stock-market-news/european-shares-as-benign-us-tariffs-and-thanksgiving-lull-offer-relief-5052089",
+      "publishedAt": "2026-11-26T17:18:55.000Z",
+      "source": "Investing.com",
+      "category": "markets"
+    },
+    {
+      "id": "ft-markets:https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1",
+      "title": "Andrew Bailey says unreleased AI models have raised encryption concerns",
+      "teaser": "Breakthroughs in mathematics have stoked fears that data across financial systems is under threat",
+      "url": "https://www.ft.com/content/450920b9-82b8-4a66-960b-5740aa7f94ae?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T17:13:40.000Z",
+      "source": "Financial Times",
+      "category": "markets"
+    },
+    {
+      "id": "inv-stocks:https://www.investing.com/news/stock-market-news/mexico-urges-asian-trade-partners-to-crack-down-on-tariff-dodging-5052646",
+      "title": "Mexico urges Asian trade partners to crack down on tariff dodging",
+      "teaser": "",
+      "url": "https://www.investing.com/news/stock-market-news/mexico-urges-asian-trade-partners-to-crack-down-on-tariff-dodging-5052646",
+      "publishedAt": "2026-11-26T17:12:43.000Z",
+      "source": "Investing.com",
+      "category": "markets"
+    },
+    {
+      "id": "inv-stocks:https://www.investing.com/news/stock-market-news/uk-stocks-higher-at-close-of-trade-investingcom-united-kingdom-100-up-188-5052644",
+      "title": "U.K. stocks higher at close of trade; Investing.com United Kingdom 100 up 1.88%",
+      "teaser": "",
+      "url": "https://www.investing.com/news/stock-market-news/uk-stocks-higher-at-close-of-trade-investingcom-united-kingdom-100-up-188-5052644",
+      "publishedAt": "2026-11-26T17:08:40.000Z",
+      "source": "Investing.com",
+      "category": "markets"
+    },
+    {
+      "id": "inv-stocks:https://www.investing.com/news/stock-market-news/spain-stocks-higher-at-close-of-trade-ibex-35-up-235-5052643",
+      "title": "Spain stocks higher at close of trade; IBEX 35 up 2.35%",
+      "teaser": "",
+      "url": "https://www.investing.com/news/stock-market-news/spain-stocks-higher-at-close-of-trade-ibex-35-up-235-5052643",
+      "publishedAt": "2026-11-26T17:08:17.000Z",
+      "source": "Investing.com",
+      "category": "markets"
+    },
+    {
+      "id": "inv-stocks:https://www.investing.com/news/stock-market-news/portugal-stocks-higher-at-close-of-trade-psi-up-133-5052642",
+      "title": "Portugal stocks higher at close of trade; PSI up 1.33%",
+      "teaser": "",
+      "url": "https://www.investing.com/news/stock-market-news/portugal-stocks-higher-at-close-of-trade-psi-up-133-5052642",
+      "publishedAt": "2026-11-26T17:07:54.000Z",
+      "source": "Investing.com",
+      "category": "markets"
+    },
+    {
+      "id": "inv-stocks:https://www.investing.com/news/stock-market-news/netherlands-stocks-higher-at-close-of-trade-aex-up-186-5052641",
+      "title": "Netherlands stocks higher at close of trade; AEX up 1.86%",
+      "teaser": "",
+      "url": "https://www.investing.com/news/stock-market-news/netherlands-stocks-higher-at-close-of-trade-aex-up-186-5052641",
+      "publishedAt": "2026-11-26T17:07:29.000Z",
+      "source": "Investing.com",
+      "category": "markets"
+    },
+    {
+      "id": "inv-stocks:https://www.investing.com/news/stock-market-news/italy-stocks-higher-at-close-of-trade-investingcom-italy-40-up-247-5052640",
+      "title": "Italy stocks higher at close of trade; Investing.com Italy 40 up 2.47%",
+      "teaser": "",
+      "url": "https://www.investing.com/news/stock-market-news/italy-stocks-higher-at-close-of-trade-investingcom-italy-40-up-247-5052640",
+      "publishedAt": "2026-11-26T17:07:05.000Z",
+      "source": "Investing.com",
+      "category": "markets"
+    },
+    {
+      "id": "inv-stocks:https://www.investing.com/news/stock-market-news/germany-stocks-higher-at-close-of-trade-dax-up-214-5052639",
+      "title": "Germany stocks higher at close of trade; DAX up 2.14%",
+      "teaser": "",
+      "url": "https://www.investing.com/news/stock-market-news/germany-stocks-higher-at-close-of-trade-dax-up-214-5052639",
+      "publishedAt": "2026-11-26T17:06:16.000Z",
+      "source": "Investing.com",
+      "category": "markets"
+    },
+    {
+      "id": "ft-markets:https://www.ft.com/content/6e217409-9fbb-456c-b405-2eb15bb69679?syn-25a6b1a6=1",
+      "title": "Global stocks climb after volatile US trading over AI risks",
+      "teaser": "Tech shares hit this month by fears over whether boom can be sustained",
+      "url": "https://www.ft.com/content/6e217409-9fbb-456c-b405-2eb15bb69679?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T16:49:54.000Z",
+      "source": "Financial Times",
+      "category": "markets"
+    },
+    {
+      "id": "inv-economy:https://www.investing.com/news/economy-news/germany-must-prepare-for-two-more-difficult-years-with-trump-diws-fratzscher-says-5052627",
+      "title": "Germany must prepare for two more difficult years with Trump, DIW’s Fratzscher says",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economy-news/germany-must-prepare-for-two-more-difficult-years-with-trump-diws-fratzscher-says-5052627",
+      "publishedAt": "2026-11-26T16:42:39.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "inv-economy:https://www.investing.com/news/economy-news/trump-demands-probe-of-gdp-data-released-before-midterms-5052586",
+      "title": "Trump demands probe of GDP data released before midterms",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economy-news/trump-demands-probe-of-gdp-data-released-before-midterms-5052586",
+      "publishedAt": "2026-11-26T16:07:00.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "inv-economy:https://www.investing.com/news/economy-news/analysisspains-economic-gains-miss-voters-wallets-as-sanchez-seeks-reelection-5052022",
+      "title": "Analysis-Spain’s economic gains miss voters’ wallets as Sanchez seeks reelection",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economy-news/analysisspains-economic-gains-miss-voters-wallets-as-sanchez-seeks-reelection-5052022",
+      "publishedAt": "2026-11-26T16:06:46.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "ft-economy:https://www.ft.com/content/1fda901a-222a-4b3e-8e20-ea80c3fbf1d2?syn-25a6b1a6=1",
+      "title": "Pablo Hernández de Cos: the ‘consensus-builder’ taking over the ECB",
+      "teaser": "Spanish economist is seen as a skilled diplomat with a ‘unique blend of diplomatic finesse and academic rigour’",
+      "url": "https://www.ft.com/content/1fda901a-222a-4b3e-8e20-ea80c3fbf1d2?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T16:02:36.000Z",
+      "source": "Financial Times",
+      "category": "economy"
+    },
+    {
+      "id": "inv-economy:https://www.investing.com/news/economy-news/brazil-not-ready-yet-for-household-debtservice-cap-central-bank-official-says-5052606",
+      "title": "Brazil not ready yet for household debt-service cap, central bank official says",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economy-news/brazil-not-ready-yet-for-household-debtservice-cap-central-bank-official-says-5052606",
+      "publishedAt": "2026-11-26T16:00:27.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "cnbc-finance:https://www.cnbc.com/2026/11/26/nvidias-volatile-swings-expose-risks-of-single-stock-etfs.html",
+      "title": "Buyer beware? Nvidia's volatile swings expose risks of single-stock ETFs",
+      "teaser": "ETF Action founding partner Mike Akins and GraniteShares CEO Will Rhind react to Nvidia's sharp losses and latest comeback.",
+      "url": "https://www.cnbc.com/2026/11/26/nvidias-volatile-swings-expose-risks-of-single-stock-etfs.html",
+      "publishedAt": "2026-11-26T16:00:01.000Z",
+      "source": "CNBC",
+      "category": "companies"
+    },
+    {
+      "id": "inv-economy:https://www.investing.com/news/economy-news/north-korean-launderers-turn-to-littleknown-crypto-services-to-move-binance-haul-say-researchers-5052603",
+      "title": "North Korean launderers turn to little-known crypto services to move Binance haul, say researchers",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economy-news/north-korean-launderers-turn-to-littleknown-crypto-services-to-move-binance-haul-say-researchers-5052603",
+      "publishedAt": "2026-11-26T15:54:44.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/c4affa94-263d-4bab-959a-b26fc7cc8077?syn-25a6b1a6=1",
+      "title": "European airlines brace for more bankruptcies after Norse suspends flights",
+      "teaser": "Wave of failures has swept through low-margin industry since Middle East conflict drove up fuel prices",
+      "url": "https://www.ft.com/content/c4affa94-263d-4bab-959a-b26fc7cc8077?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T15:51:41.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/cf30cef5-0e35-4ebd-a456-797dbd1ad132?syn-25a6b1a6=1",
+      "title": "BoE to cut capital requirements for banks as it warns of AI risks",
+      "teaser": "Central bank tells lenders they will need to keep pace with the growing scale and sophistication of cyber threats",
+      "url": "https://www.ft.com/content/cf30cef5-0e35-4ebd-a456-797dbd1ad132?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T15:42:39.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "inv-economy:https://www.investing.com/news/economy-news/dollar-steady-as-sliding-yields-temper-safehaven-bid-5051883",
+      "title": "Dollar rally pauses for Thanksgiving",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economy-news/dollar-steady-as-sliding-yields-temper-safehaven-bid-5051883",
+      "publishedAt": "2026-11-26T15:42:28.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "inv-economy:https://www.investing.com/news/economy-news/bank-of-england-sees-growing-financial-risks-as-ai-borrowing-surges-5052592",
+      "title": "Bank of England sees growing financial risks as AI borrowing surges",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economy-news/bank-of-england-sees-growing-financial-risks-as-ai-borrowing-surges-5052592",
+      "publishedAt": "2026-11-26T15:30:27.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/21a1331c-c201-4333-b312-ab87b7fd994f?syn-25a6b1a6=1",
+      "title": "Britain’s electricity grid operator makes record number of calls for extra power",
+      "teaser": "Issue driven by colder weather and constraints in getting electricity from wind farms in Scotland to consumers in England",
+      "url": "https://www.ft.com/content/21a1331c-c201-4333-b312-ab87b7fd994f?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T15:29:43.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "cnbc-economy:https://www.cnbc.com/2026/11/26/pablo-hernandez-de-cos-ecb-president.html",
+      "title": "Spain’s Pablo Hernández de Cos set to lead European Central Bank",
+      "teaser": "De Cos will lead the ECB into a period of political uncertainty and choppy growth, after winning the backing needed to succeed Christine Lagarde next year.",
+      "url": "https://www.cnbc.com/2026/11/26/pablo-hernandez-de-cos-ecb-president.html",
+      "publishedAt": "2026-11-26T15:28:26.000Z",
+      "source": "CNBC",
+      "category": "economy"
+    },
+    {
+      "id": "ft-economy:https://www.ft.com/content/1c91974e-8b52-4bd6-a9c3-fb42c1d02cf4?syn-25a6b1a6=1",
+      "title": "Bringing data to the Thanksgiving table",
+      "teaser": "Does America really face a food affordability crisis?",
+      "url": "https://www.ft.com/content/1c91974e-8b52-4bd6-a9c3-fb42c1d02cf4?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T15:26:58.000Z",
+      "source": "Financial Times",
+      "category": "economy"
+    },
+    {
+      "id": "inv-economy:https://www.investing.com/news/economy-news/ecb-turns-to-crisis-veteran-de-cos-as-new-strains-loom-5052567",
+      "title": "ECB turns to crisis veteran De Cos as new strains loom",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economy-news/ecb-turns-to-crisis-veteran-de-cos-as-new-strains-loom-5052567",
+      "publishedAt": "2026-11-26T15:00:41.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "boe:https://www.bankofengland.co.uk/news/2024/march/payment-systems-memorandum-of-understanding",
+      "title": "Payments systems Memorandum of Understanding",
+      "teaser": "Bank of England, PRA, FCA and PSR review Memorandum of Understanding in relation to payment systems in the UK",
+      "url": "https://www.bankofengland.co.uk/news/2024/march/payment-systems-memorandum-of-understanding",
+      "publishedAt": "2026-11-26T15:00:00.000Z",
+      "source": "Bank of England",
+      "category": "central-banks"
+    },
+    {
+      "id": "ft-markets:https://www.ft.com/content/3890f725-66dd-4613-8a60-d9e3ea38d25a?syn-25a6b1a6=1",
+      "title": "Hawkish Fed poised to raise rates despite stock market turmoil",
+      "teaser": "Inflation is top concern for US central bank officials even as tech-led sell-off triggers fears for economy",
+      "url": "https://www.ft.com/content/3890f725-66dd-4613-8a60-d9e3ea38d25a?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T14:58:45.000Z",
+      "source": "Financial Times",
+      "category": "markets"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/b6db41b9-5af1-4105-a063-7dbf40e7fb2c?syn-25a6b1a6=1",
+      "title": "Babcock secures record £8.7bn contract to support Royal Navy submarines",
+      "teaser": "Five-year deal comes amid concerns over fleet’s readiness and increased Russian activity in north Atlantic",
+      "url": "https://www.ft.com/content/b6db41b9-5af1-4105-a063-7dbf40e7fb2c?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T14:57:27.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "inv-commodities:https://www.investing.com/news/commodities-news/leaders-wrestle-over-eus-budget-ukraine-financing-as-le-pen-focuses-minds-5052559",
+      "title": "Leaders wrestle over EU’s budget, Ukraine financing, as Le Pen focuses minds",
+      "teaser": "",
+      "url": "https://www.investing.com/news/commodities-news/leaders-wrestle-over-eus-budget-ukraine-financing-as-le-pen-focuses-minds-5052559",
+      "publishedAt": "2026-11-26T14:48:51.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "ft-economy:https://www.ft.com/content/441dbda3-38be-48b9-9603-3b68f1ed3a48",
+      "title": "The new ECB team is set for a baptism of fire",
+      "teaser": "The tail-end of the ECB’s tightening cycle and the fallout of a consequential election in France will provide an early test",
+      "url": "https://www.ft.com/content/441dbda3-38be-48b9-9603-3b68f1ed3a48",
+      "publishedAt": "2026-11-26T14:11:40.000Z",
+      "source": "Financial Times",
+      "category": "economy"
+    },
+    {
+      "id": "inv-commodities:https://www.investing.com/news/commodities-news/irans-supreme-leader-urges-guardslinked-basij-volunteers-to-broaden-social-reach-5052527",
+      "title": "Iran’s supreme leader urges Guards-linked Basij volunteers to broaden social reach",
+      "teaser": "",
+      "url": "https://www.investing.com/news/commodities-news/irans-supreme-leader-urges-guardslinked-basij-volunteers-to-broaden-social-reach-5052527",
+      "publishedAt": "2026-11-26T13:48:21.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "inv-commodities:https://www.investing.com/news/commodities-news/gold-eases-as-us-inflation-data-reinforces-fed-ratehike-bets-5051964",
+      "title": "Gold spot prices slip as dollar firms, while U.S. futures gain",
+      "teaser": "",
+      "url": "https://www.investing.com/news/commodities-news/gold-eases-as-us-inflation-data-reinforces-fed-ratehike-bets-5051964",
+      "publishedAt": "2026-11-26T13:42:53.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "ft-markets:https://www.ft.com/content/022fcf0c-9a7a-4bf0-b853-4de8b2ba88b9",
+      "title": "British and European banks have taken on a lot of France risk",
+      "teaser": "Toulouse or not Toulouse",
+      "url": "https://www.ft.com/content/022fcf0c-9a7a-4bf0-b853-4de8b2ba88b9",
+      "publishedAt": "2026-11-26T13:32:02.000Z",
+      "source": "Financial Times",
+      "category": "markets"
+    },
+    {
+      "id": "inv-commodities:https://www.investing.com/news/commodities-news/oil-steadies-as-hormuz-attacks-threaten-supply-recovery-inventory-build-weighs-5051937",
+      "title": "Oil edges higher as Hormuz attacks threaten Persian Gulf supply recovery",
+      "teaser": "",
+      "url": "https://www.investing.com/news/commodities-news/oil-steadies-as-hormuz-attacks-threaten-supply-recovery-inventory-build-weighs-5051937",
+      "publishedAt": "2026-11-26T12:57:21.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/6a01bdc9-f242-4272-b5e3-a147af5b125c?syn-25a6b1a6=1",
+      "title": "Nvidia’s ‘great man theory’ is flawed",
+      "teaser": "Some Big Tech companies have made a striking success of switching from founder mode to manager mode",
+      "url": "https://www.ft.com/content/6a01bdc9-f242-4272-b5e3-a147af5b125c?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T12:56:10.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "cnbc-economy:https://www.cnbc.com/2026/11/26/us-tariffs-hike-trade-agreement.html",
+      "title": "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
+      "teaser": "The U.S. planned a fresh tariff salvo on 14 trading partners, while offering some countries lower rates if they secure trade deals with Washington.",
+      "url": "https://www.cnbc.com/2026/11/26/us-tariffs-hike-trade-agreement.html",
+      "publishedAt": "2026-11-26T12:46:55.000Z",
+      "source": "CNBC",
+      "category": "economy"
+    },
+    {
+      "id": "boe:https://www.bankofengland.co.uk/statistics/notice/2026/statistical-notice-2026-09",
+      "title": "Statistical Notice 2026/09 - Update to the classification of accounts guide",
+      "teaser": "Statistical Notices update the definitions and guidance contained in the Banking Statistics Yellow Folder",
+      "url": "https://www.bankofengland.co.uk/statistics/notice/2026/statistical-notice-2026-09",
+      "publishedAt": "2026-11-26T12:33:57.000Z",
+      "source": "Bank of England",
+      "category": "central-banks"
+    },
+    {
+      "id": "inv-indicators:https://www.investing.com/news/economic-indicators/factboxstatus-of-asian-nations-trade-talks-with-trump-5052392",
+      "title": "Factbox-Status of Asian nations’ trade talks with Trump",
+      "teaser": "",
+      "url": "https://www.investing.com/news/economic-indicators/factboxstatus-of-asian-nations-trade-talks-with-trump-5052392",
+      "publishedAt": "2026-11-26T12:30:39.000Z",
+      "source": "Investing.com",
+      "category": "economy"
+    },
+    {
+      "id": "inv-commodities:https://www.investing.com/news/commodities-news/ukraine-says-russia-hits-two-grain-ships-near-odesa-ports-5052479",
+      "title": "Ukraine says Russia hits two grain ships near Odesa ports",
+      "teaser": "",
+      "url": "https://www.investing.com/news/commodities-news/ukraine-says-russia-hits-two-grain-ships-near-odesa-ports-5052479",
+      "publishedAt": "2026-11-26T12:30:12.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "ecb:https://www.ecb.europa.eu/press/accounts/2026/html/ecb.mg261126~ccf28c8071.en.html",
+      "title": "Meeting of 28-29 October 2026",
+      "teaser": "",
+      "url": "https://www.ecb.europa.eu/press/accounts/2026/html/ecb.mg261126~ccf28c8071.en.html",
+      "publishedAt": "2026-11-26T12:30:00.000Z",
+      "source": "European Central Bank",
+      "category": "central-banks"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/e0a1bf7a-7c28-4a20-8ca8-86dc7d5097b3?syn-25a6b1a6=1",
+      "title": "Texas resumes data centre permitting before Democrats take over",
+      "teaser": "Incoming governor Gina Hinojosa pledged to rein in construction of new projects during her campaign",
+      "url": "https://www.ft.com/content/e0a1bf7a-7c28-4a20-8ca8-86dc7d5097b3?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T12:00:10.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "ft-markets:https://www.ft.com/content/bece6b13-2af4-4704-8511-ac460985582f?syn-25a6b1a6=1",
+      "title": "Trafigura calls for greater European metals support after zinc shutdown",
+      "teaser": "The trading house will close Dutch zinc operations after calling for greater government help with power costs",
+      "url": "https://www.ft.com/content/bece6b13-2af4-4704-8511-ac460985582f?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T12:00:09.000Z",
+      "source": "Financial Times",
+      "category": "markets"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/2e618ea7-e91f-40f3-903e-9ce355b0308c?syn-25a6b1a6=1",
+      "title": "Nintendo and Sony ready for a two-level battle with AI",
+      "teaser": "Idea that the processing power behind games will one day reside in the cloud is something the industry must plan for",
+      "url": "https://www.ft.com/content/2e618ea7-e91f-40f3-903e-9ce355b0308c?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T11:59:32.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "inv-commodities:https://www.investing.com/news/commodities-news/europe-gas-prices-rangebound-as-markets-weigh-middle-east-tensions-5052229",
+      "title": "Europe gas prices rangebound as markets weigh Middle East tensions",
+      "teaser": "",
+      "url": "https://www.investing.com/news/commodities-news/europe-gas-prices-rangebound-as-markets-weigh-middle-east-tensions-5052229",
+      "publishedAt": "2026-11-26T11:14:58.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/9c271b6d-3280-4abc-9e8f-a93caf594d21?syn-25a6b1a6=1",
+      "title": "UK government has ‘failed’ to make case for third Heathrow runway, say MPs",
+      "teaser": "Transport committee warns ambitious scheme would only create ‘modest’ economic growth as PM Andy Burnham weighs decision on £33bn project",
+      "url": "https://www.ft.com/content/9c271b6d-3280-4abc-9e8f-a93caf594d21?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T11:05:07.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/0b69fa9a-7e15-4993-acfb-7fc93b81f2d7?syn-25a6b1a6=1",
+      "title": "The space economy and European common goods",
+      "teaser": "With its formal budget kept small, the EU should think outside the box on ‘club goods’",
+      "url": "https://www.ft.com/content/0b69fa9a-7e15-4993-acfb-7fc93b81f2d7?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T11:00:07.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/1f4095cb-c032-414f-9858-554c8b82b145?syn-25a6b1a6=1",
+      "title": "Backlash over AI power costs threatens $67bn NextEra-Dominion deal",
+      "teaser": "Tie-up faces fierce opposition as anger over soaring electricity bills spills into Wall Street dealmaking",
+      "url": "https://www.ft.com/content/1f4095cb-c032-414f-9858-554c8b82b145?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T11:00:06.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "inv-commodities:https://www.investing.com/news/commodities-news/proseccos-heroic-vines-offer-a-test-case-in-climate-resilience-5052097",
+      "title": "Prosecco’s ’heroic’ vines offer a test case in climate resilience",
+      "teaser": "",
+      "url": "https://www.investing.com/news/commodities-news/proseccos-heroic-vines-offer-a-test-case-in-climate-resilience-5052097",
+      "publishedAt": "2026-11-26T10:30:21.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "boe:https://www.bankofengland.co.uk/financial-policy-committee-record/2026/november-2026",
+      "title": "Financial Policy Committee Record – November 2026",
+      "teaser": "Our Financial Policy Committee (FPC) meets to identify risks to financial stability and agree policy actions aimed at safeguarding the resilience of the UK…",
+      "url": "https://www.bankofengland.co.uk/financial-policy-committee-record/2026/november-2026",
+      "publishedAt": "2026-11-26T10:30:00.000Z",
+      "source": "Bank of England",
+      "category": "central-banks"
+    },
+    {
+      "id": "inv-forex:https://www.investing.com/news/forex-news/asia-fx-won-muted-after-bok-hikes-rates-dollar-steady-5052015",
+      "title": "Dollar takes Thanksgiving breather below 2026 peaks; Euro dips",
+      "teaser": "",
+      "url": "https://www.investing.com/news/forex-news/asia-fx-won-muted-after-bok-hikes-rates-dollar-steady-5052015",
+      "publishedAt": "2026-11-26T09:53:31.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "inv-forex:https://www.investing.com/news/forex-news/sterling-today-pound-steady-as-dollar-holds-range-on-us-holiday-5052307",
+      "title": "Sterling today: Pound steady as dollar holds range on U.S. holiday",
+      "teaser": "",
+      "url": "https://www.investing.com/news/forex-news/sterling-today-pound-steady-as-dollar-holds-range-on-us-holiday-5052307",
+      "publishedAt": "2026-11-26T09:34:10.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/d10e7600-2f98-42d6-8262-19f0a57d1112?syn-25a6b1a6=1",
+      "title": "UniCredit to propose Orcel as chair of Commerzbank",
+      "teaser": "Italian lender will put forward its chief executive as head of supervisory board at its German rival",
+      "url": "https://www.ft.com/content/d10e7600-2f98-42d6-8262-19f0a57d1112?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T09:24:06.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "inv-forex:https://www.investing.com/news/forex-news/global-bond-rally-eases-as-sticky-pce-locks-in-december-fed-hike-5052104",
+      "title": "Global bond rally eases as sticky PCE locks in December Fed hike",
+      "teaser": "",
+      "url": "https://www.investing.com/news/forex-news/global-bond-rally-eases-as-sticky-pce-locks-in-december-fed-hike-5052104",
+      "publishedAt": "2026-11-26T09:01:59.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/722ecb81-51cc-4897-baa9-cb80c4d2fe4a?syn-25a6b1a6=1",
+      "title": "Tata Trusts launch first legal salvo in boardroom battle",
+      "teaser": "Charitable bodies controlling Tata Sons file court challenge against N Chandrasekaran’s reappointment as chair",
+      "url": "https://www.ft.com/content/722ecb81-51cc-4897-baa9-cb80c4d2fe4a?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T08:16:36.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "ft-companies:https://www.ft.com/content/acd1b122-558c-42ba-ba28-0723ef04fd3f?syn-25a6b1a6=1",
+      "title": "UK regulator finds ‘systemic’ problems in £8bn private dental market",
+      "teaser": "Investigation finds patients are sold unnecessary services in an industry that more people are turning to",
+      "url": "https://www.ft.com/content/acd1b122-558c-42ba-ba28-0723ef04fd3f?syn-25a6b1a6=1",
+      "publishedAt": "2026-11-26T07:59:45.000Z",
+      "source": "Financial Times",
+      "category": "companies"
+    },
+    {
+      "id": "cnbc-finance:https://www.cnbc.com/2026/11/26/china-ev-xpeng-humanoid-robots-household-chores.html",
+      "title": "Robots could be doing household chores in just 1-2 years, Chinese EV firm says",
+      "teaser": "Xpeng Co-President Brian Gu shared his humanoid robot predictions with CNBC in an interview Thursday.",
+      "url": "https://www.cnbc.com/2026/11/26/china-ev-xpeng-humanoid-robots-household-chores.html",
+      "publishedAt": "2026-11-26T07:30:11.000Z",
+      "source": "CNBC",
+      "category": "companies"
+    },
+    {
+      "id": "inv-commodities:https://www.investing.com/news/commodities-news/oil-rises-on-supply-concerns-as-iran-claims-mine-strikes-on-ships-5051949",
+      "title": "Oil rises on supply concerns as Iran claims mine strikes on ships",
+      "teaser": "",
+      "url": "https://www.investing.com/news/commodities-news/oil-rises-on-supply-concerns-as-iran-claims-mine-strikes-on-ships-5051949",
+      "publishedAt": "2026-11-26T03:12:18.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "inv-commodities:https://www.investing.com/news/commodities-news/new-trump-tariffs-would-likely-increase-sugar-prices-in-the-us-5051752",
+      "title": "New Trump tariffs would likely increase sugar prices in the US",
+      "teaser": "",
+      "url": "https://www.investing.com/news/commodities-news/new-trump-tariffs-would-likely-increase-sugar-prices-in-the-us-5051752",
+      "publishedAt": "2026-11-26T02:18:18.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "inv-commodities:https://www.investing.com/news/commodities-news/us-proposes-higher-tariffs-on-brazil-imports-including-10-duty-on-aircraft-5050713",
+      "title": "US proposes surprise new tariffs on Brazil imports, including 10% duty on aircraft",
+      "teaser": "",
+      "url": "https://www.investing.com/news/commodities-news/us-proposes-higher-tariffs-on-brazil-imports-including-10-duty-on-aircraft-5050713",
+      "publishedAt": "2026-11-25T23:48:23.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "inv-forex:https://www.investing.com/news/forex-news/asia-fx-weakens-as-dollar-firms-on-tariff-risks-aussie-hits-11month-low-5049767",
+      "title": "Dollar reverses course after earlier gains driven by hot U.S. data, AI rout",
+      "teaser": "",
+      "url": "https://www.investing.com/news/forex-news/asia-fx-weakens-as-dollar-firms-on-tariff-risks-aussie-hits-11month-low-5049767",
+      "publishedAt": "2026-11-25T21:18:43.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "fed:https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125b.htm",
+      "title": "Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions",
+      "teaser": "",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125b.htm",
+      "publishedAt": "2026-11-25T20:00:00.000Z",
+      "source": "Federal Reserve",
+      "category": "central-banks"
+    },
+    {
+      "id": "fed:https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125a.htm",
+      "title": "Agencies announce dollar thresholds for smaller loan exemption from appraisal requirements for higher-priced mortgage loans",
+      "teaser": "",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125a.htm",
+      "publishedAt": "2026-11-25T20:00:00.000Z",
+      "source": "Federal Reserve",
+      "category": "central-banks"
+    },
+    {
+      "id": "inv-forex:https://www.investing.com/news/forex-news/us-to-cap-india-tariff-at-17-if-trade-deal-is-reached-ustr-says-5051317",
+      "title": "US to cap India tariff at 17% if trade deal is reached, USTR says",
+      "teaser": "",
+      "url": "https://www.investing.com/news/forex-news/us-to-cap-india-tariff-at-17-if-trade-deal-is-reached-ustr-says-5051317",
+      "publishedAt": "2026-11-25T18:30:39.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "ecb:https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr261125_1~6333a90f3a.en.html",
+      "title": "ECB and Sveriges Riksbank conclude agreement for Sweden to join T2",
+      "teaser": "",
+      "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr261125_1~6333a90f3a.en.html",
+      "publishedAt": "2026-11-25T17:30:00.000Z",
+      "source": "European Central Bank",
+      "category": "central-banks"
+    },
+    {
+      "id": "inv-forex:https://www.investing.com/news/forex-news/sterling-today-pound-falls-as-risk-unwind-sends-funds-back-to-dollar-5050111",
+      "title": "Sterling today: Pound slips as risk unwind lifts dollar before PCE data",
+      "teaser": "",
+      "url": "https://www.investing.com/news/forex-news/sterling-today-pound-falls-as-risk-unwind-sends-funds-back-to-dollar-5050111",
+      "publishedAt": "2026-11-25T13:16:09.000Z",
+      "source": "Investing.com",
+      "category": "fx-commodities"
+    },
+    {
+      "id": "ecb:https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr261125~26d1ade228.en.html",
+      "title": "Card payments edge past cash in shops; euro area consumers want both",
+      "teaser": "",
+      "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr261125~26d1ade228.en.html",
+      "publishedAt": "2026-11-25T10:00:00.000Z",
+      "source": "European Central Bank",
+      "category": "central-banks"
+    },
+    {
+      "id": "boe:https://www.bankofengland.co.uk/news/2026/november/regulators-implement-growth-friendly-securitisation-reforms",
+      "title": "Regulators implement growth-friendly securitisation reforms",
+      "teaser": "The Prudential Regulation Authority and Financial Conduct Authority have today published revised rules designed to support securitisation’s contribution to…",
+      "url": "https://www.bankofengland.co.uk/news/2026/november/regulators-implement-growth-friendly-securitisation-reforms",
+      "publishedAt": "2026-11-25T10:00:00.000Z",
+      "source": "Bank of England",
+      "category": "central-banks"
+    },
+    {
+      "id": "fed:https://www.federalreserve.gov/newsevents/pressreleases/monetary20261124a.htm",
+      "title": "Minutes of the Board's discount rate meetings on October 19 and October 28, 2026",
+      "teaser": "",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261124a.htm",
+      "publishedAt": "2026-11-24T19:00:00.000Z",
+      "source": "Federal Reserve",
+      "category": "central-banks"
+    },
+    {
+      "id": "boe:https://www.bankofengland.co.uk/news/2026/november/daniel-pinto-appointment-fpc",
+      "title": "Daniel E. Pinto appointed to the Bank of England’s Financial Policy Committee",
+      "teaser": "Daniel E. Pinto has been appointed as an external member of the Financial Policy Committee.",
+      "url": "https://www.bankofengland.co.uk/news/2026/november/daniel-pinto-appointment-fpc",
+      "publishedAt": "2026-11-24T16:00:00.000Z",
+      "source": "Bank of England",
+      "category": "central-banks"
+    },
+    {
+      "id": "ecb:https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp261124~17928e5456.en.html",
+      "title": "Boris Vujčić: Resilience in an age of shocks: lessons from central and eastern Europe",
+      "teaser": "",
+      "url": "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp261124~17928e5456.en.html",
+      "publishedAt": "2026-11-24T11:00:00.000Z",
+      "source": "European Central Bank",
+      "category": "central-banks"
+    },
+    {
+      "id": "ecb:https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp261123~b5816801a0.en.pdf",
+      "title": "Philip R. Lane: Climate change and monetary policy",
+      "teaser": "",
+      "url": "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp261123~b5816801a0.en.pdf",
+      "publishedAt": "2026-11-23T14:30:00.000Z",
+      "source": "European Central Bank",
+      "category": "central-banks"
+    },
+    {
+      "id": "ecb:https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr261123~76b6f57b74.en.html",
+      "title": "ECB expands acceptance of DLT-based assets as eligible Eurosystem collateral",
+      "teaser": "",
+      "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr261123~76b6f57b74.en.html",
+      "publishedAt": "2026-11-23T10:00:00.000Z",
+      "source": "European Central Bank",
+      "category": "central-banks"
+    },
+    {
+      "id": "boe:https://www.bankofengland.co.uk/news/2026/november/general-insurance-stress-test-highlights-value-of-rehearsing-crisis-response-and-recovery",
+      "title": "General insurance stress test highlights value of rehearsing crisis response and recovery",
+      "teaser": "The Prudential Regulation Authority (PRA) has today published the results of its 2026 Dynamic General Insurance Stress Test (DyGIST)",
+      "url": "https://www.bankofengland.co.uk/news/2026/november/general-insurance-stress-test-highlights-value-of-rehearsing-crisis-response-and-recovery",
+      "publishedAt": "2026-11-23T10:00:00.000Z",
+      "source": "Bank of England",
+      "category": "central-banks"
+    },
+    {
+      "id": "fed:https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm",
+      "title": "Federal Reserve announces College Fed Challenge winners",
+      "teaser": "",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm",
+      "publishedAt": "2026-11-20T21:15:00.000Z",
+      "source": "Federal Reserve",
+      "category": "central-banks"
+    }
+  ],
+  "fetchedAt": "2026-11-26T18:12:32.430Z"
+}
